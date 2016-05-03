@@ -97,6 +97,7 @@ GameObject:
   - 50: {fileID: 129108241}
   - 58: {fileID: 129108240}
   - 95: {fileID: 129108243}
+  - 114: {fileID: 129108244}
   m_Layer: 0
   m_Name: GO_Player
   m_TagString: Untagged
@@ -142,7 +143,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -184,7 +185,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 129108238}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3bfce33c031384fbc89aeef606ec278d, type: 2}
   m_CullingMode: 0
@@ -194,6 +195,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &129108244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 129108238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f2e9572f95447fdbf010b8fc802722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1044671283
 GameObject:
   m_ObjectHideFlags: 0
