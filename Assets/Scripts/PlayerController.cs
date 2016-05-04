@@ -4,16 +4,13 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 
-  private const int NUMBER_BULLETS = 3;
-
-  private List<GameObject> bullets;
-  private int currentBullet;
   private Vector3 leftBottom;
   private Vector3 rightTop;
-  private float primaryCooldown;
 
-    public float speed = 5;
-  // Use this for initialization
+  public GameObject bulletPrefab;
+  public float speed;
+  public float shootDelay;
+
   void Start () {
     //Set initial position of player 
     leftBottom = Vector3.zero;
@@ -27,22 +24,9 @@ public class PlayerController : MonoBehaviour {
     pos.y = Mathf.Lerp(rightTop.y, leftBottom.y, 0.85f);
 
     gameObject.transform.localPosition = pos;;
-    primaryCooldown = 10f;
-    
-
-    //Create reusable bullets
-    bullets = new List<GameObject>();
-    for (int i = 0; i < NUMBER_BULLETS; i++)
-    {
-      GameObject bullet = Util.LoadPFab("Prefabs/prefab_basic_bullet");
-      bullet.active = false;
-      bullets.Add(bullet);
-    }
-    currentBullet = 0;
 
   }
 
-  // Update is called once per frame
   void Update () {
     //Movement
     float x = Input.GetAxis("Horizontal");
@@ -53,38 +37,33 @@ public class PlayerController : MonoBehaviour {
     pos.x += x * mod * Time.deltaTime;
     pos.y += y * mod * Time.deltaTime;
 
-    if (pos.x > rightTop.x)
-      pos.x = rightTop.x;
-    if (pos.x < leftBottom.x)
-      pos.x =leftBottom.x;
+    Bounds bounds = GetComponent<SpriteRenderer>().bounds;
+    float width = bounds.extents.x / 2f;
+    float height = bounds.extents.y / 2;
 
-    if (pos.y > rightTop.y)
-      pos.y = rightTop.y;
-    if (pos.y < leftBottom.y)
-      pos.y =leftBottom.y;
+    if (pos.x+width > rightTop.x)
+      pos.x = rightTop.x-width;
+    if (pos.x < leftBottom.x + width)
+      pos.x =leftBottom.x+width;
+
+    if (pos.y+height > rightTop.y)
+      pos.y = rightTop.y-height;
+    if (pos.y < leftBottom.y +width)
+      pos.y =leftBottom.y+height;
 
     gameObject.transform.localPosition = pos;
 
     //Shoot Bullets
-    //Set initial position and activate
-    if (currentBullet >= NUMBER_BULLETS)
-      currentBullet = 0;
-    if (Input.GetButtonDown("Primary Fire")) {
-      GameObject bullet = bullets[currentBullet++];
-      if (!bullet.active){
-        Vector3 bullet_position = bullet.transform.localPosition;
-        bullet_position.x = transform.localPosition.x;
-        bullet_position.y = transform.localPosition.y;
-        bullet.transform.localPosition = pos;
-        bullet.active = true;
-      }
-    }
-    //If bullet is outside disabled it
-    foreach (var bullet in bullets)
-    {
-      if(bullet.transform.localPosition.y > rightTop.y){
-        bullet.active = false;
-      }
+    if (Input.GetButtonDown("Primary Fire")) 
+      StartCoroutine (Shoot ());
+  }
+
+  IEnumerator Shoot()
+  {
+    while (Input.GetButton("Primary Fire")) {
+      yield return new WaitForSeconds (shootDelay);
+      GameObject go = (GameObject) Instantiate (bulletPrefab, transform.position, transform.rotation);
     }
   }
+
 }
