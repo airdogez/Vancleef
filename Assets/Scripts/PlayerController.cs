@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
   private int currentBullet;
   private Vector3 leftBottom;
   private Vector3 rightTop;
+  private float primaryCooldown;
   // Use this for initialization
   void Start () {
     //Set initial position of player 
@@ -19,11 +20,12 @@ public class PlayerController : MonoBehaviour {
 
     Vector3 pos = gameObject.transform.localPosition;
 
-      pos.x = Mathf.Lerp(leftBottom.x, rightTop.x, 0.5f);
+    pos.x = Mathf.Lerp(leftBottom.x, rightTop.x, 0.5f);
 
-      pos.y = Mathf.Lerp(rightTop.y, leftBottom.y, 0.85f);
+    pos.y = Mathf.Lerp(rightTop.y, leftBottom.y, 0.85f);
 
-    gameObject.transform.localPosition = pos;
+    gameObject.transform.localPosition = pos;;
+    primaryCooldown = 10f;
     
 
     //Create reusable bullets
@@ -44,10 +46,10 @@ public class PlayerController : MonoBehaviour {
     float x = Input.GetAxis("Horizontal");
     float y = Input.GetAxis("Vertical");
     bool shift = Input.GetButton("Slow Down");
-    float mod = (shift) ? 10f : 5f;
+    float mod = (shift) ? 5f : 10f;
     Vector3 pos = gameObject.transform.localPosition;
-    pos.x += x/mod;
-    pos.y += y/mod;
+    pos.x += x * mod * Time.deltaTime;
+    pos.y += y * mod * Time.deltaTime;
 
     if (pos.x > rightTop.x)
       pos.x = rightTop.x;
