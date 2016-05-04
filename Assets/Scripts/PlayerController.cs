@@ -12,10 +12,10 @@ public class PlayerController : MonoBehaviour {
   void Update () {
     float x = Input.GetAxis("Horizontal");
     float y = Input.GetAxis("Vertical");
-
+    float mod = (Input.GetKeyDown(KeyCode.LeftShift)) ? 15f : 5f;
     Vector3 pos = gameObject.transform.localPosition;
-    pos.x += x/10f;
-    pos.y += y/12f;
+    pos.x += x/mod;
+    pos.y += y/mod;
     gameObject.transform.localPosition = pos;
 
   }
