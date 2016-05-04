@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 public class PlayerController : MonoBehaviour {
 
   // Use this for initialization
@@ -12,11 +11,11 @@ public class PlayerController : MonoBehaviour {
   void Update () {
     float x = Input.GetAxis("Horizontal");
     float y = Input.GetAxis("Vertical");
-    float mod = (Input.GetKeyDown(KeyCode.LeftShift)) ? 15f : 5f;
+    bool shift = Input.GetButton("Slow Down");
+    float mod = (shift) ? 10f : 5f;
     Vector3 pos = gameObject.transform.localPosition;
     pos.x += x/mod;
     pos.y += y/mod;
     gameObject.transform.localPosition = pos;
-
   }
 }
