@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour {
   private Vector3 leftBottom;
   private Vector3 rightTop;
   private float primaryCooldown;
+
+    public float speed = 5;
   // Use this for initialization
   void Start () {
     //Set initial position of player 
