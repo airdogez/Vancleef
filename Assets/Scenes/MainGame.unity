@@ -98,9 +98,9 @@ GameObject:
   - 95: {fileID: 129108243}
   - 114: {fileID: 129108244}
   - 58: {fileID: 129108240}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GO_Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -574,7 +574,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 452598, guid: e026a312b73873b42a8b007fc98799c1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.05
+      value: 4.15
       objectReference: {fileID: 0}
     - target: {fileID: 452598, guid: e026a312b73873b42a8b007fc98799c1, type: 2}
       propertyPath: m_LocalPosition.y

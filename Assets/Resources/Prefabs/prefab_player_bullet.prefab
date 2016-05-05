@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21278646}
   - 61: {fileID: 6145548}
   - 50: {fileID: 5045988}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 212: {fileID: 21205510}
   - 61: {fileID: 6125108}
   - 50: {fileID: 5053942}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - 4: {fileID: 452598}
   - 114: {fileID: 11407042}
   - 50: {fileID: 5092650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: prefab_player_bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

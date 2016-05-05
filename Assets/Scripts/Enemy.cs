@@ -5,7 +5,8 @@ public class Enemy : MonoBehaviour {
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    Destroy(other.gameObject);
+    if(!other.CompareTag("Player"))
+      Destroy(other.gameObject);
     Destroy(gameObject);
   }
   // Use this for initialization
