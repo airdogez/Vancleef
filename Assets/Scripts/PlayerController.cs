@@ -32,30 +32,27 @@ public class PlayerController : MonoBehaviour {
     float x = Input.GetAxis("Horizontal");
     float y = Input.GetAxis("Vertical");
     bool shift = Input.GetButton("Slow Down");
-    float mod = (shift) ? 5f : 10f;
+    float mod = (shift) ? 3f : 10f;
     Vector3 pos = gameObject.transform.localPosition;
     pos.x += x * mod * Time.deltaTime;
     pos.y += y * mod * Time.deltaTime;
 
-    Bounds bounds = GetComponent<SpriteRenderer>().bounds;
-    float width = bounds.extents.x / 2f;
-    float height = bounds.extents.y / 2;
+    if (pos.x > rightTop.x)
+      pos.x = rightTop.x;
+    if (pos.x < leftBottom.x)
+      pos.x =leftBottom.x;
 
-    if (pos.x+width > rightTop.x)
-      pos.x = rightTop.x-width;
-    if (pos.x < leftBottom.x + width)
-      pos.x =leftBottom.x+width;
-
-    if (pos.y+height > rightTop.y)
-      pos.y = rightTop.y-height;
-    if (pos.y < leftBottom.y +width)
-      pos.y =leftBottom.y+height;
+    if (pos.y > rightTop.y)
+      pos.y = rightTop.y;
+    if (pos.y < leftBottom.y)
+      pos.y =leftBottom.y;
 
     gameObject.transform.localPosition = pos;
 
     //Shoot Bullets
     if (Input.GetButtonDown("Primary Fire")) 
       StartCoroutine (Shoot ());
+
   }
 
   IEnumerator Shoot()
@@ -65,5 +62,4 @@ public class PlayerController : MonoBehaviour {
       GameObject go = (GameObject) Instantiate (bulletPrefab, transform.position, transform.rotation);
     }
   }
-
 }
