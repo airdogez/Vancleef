@@ -7,9 +7,9 @@ public class PlayerController : MonoBehaviour {
   private Vector3 leftBottom;
   private Vector3 rightTop;
 
-  public GameObject bulletPrefab;
-  public float speed;
-  public float shootDelay;
+  public GameObject _bulletPrefab;
+  public float _speed;
+  public float _shootDelay;
 
   void Start () {
     //Set initial position of player 
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour {
 
     pos.y = Mathf.Lerp(rightTop.y, leftBottom.y, 0.85f);
 
-    gameObject.transform.localPosition = pos;;
+    gameObject.transform.localPosition = pos;
 
   }
 
@@ -31,21 +31,23 @@ public class PlayerController : MonoBehaviour {
     //Movement
     float x = Input.GetAxis("Horizontal");
     float y = Input.GetAxis("Vertical");
-    bool shift = Input.GetButton("Slow Down");
-    float mod = (shift) ? 3f : 10f;
-    Vector3 pos = gameObject.transform.localPosition;
+    float mod = (Input.GetButton("Slow Down")) ? 3f : 10f;
+
+    Vector2 pos = gameObject.transform.localPosition;
     pos.x += x * mod * Time.deltaTime;
     pos.y += y * mod * Time.deltaTime;
 
-    if (pos.x > rightTop.x)
-      pos.x = rightTop.x;
-    if (pos.x < leftBottom.x)
-      pos.x =leftBottom.x;
+    Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0,0));
+    Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1,1));
 
-    if (pos.y > rightTop.y)
-      pos.y = rightTop.y;
-    if (pos.y < leftBottom.y)
-      pos.y =leftBottom.y;
+    max.x -= GetComponent<SpriteRenderer>().bounds.extents.x;
+    min.x += GetComponent<SpriteRenderer>().bounds.extents.x;
+
+    max.y -= GetComponent<SpriteRenderer>().bounds.extents.y;
+    min.y += GetComponent<SpriteRenderer>().bounds.extents.y;
+
+    pos.x = Mathf.Clamp(pos.x, min.x, max.x);
+    pos.y = Mathf.Clamp(pos.y, min.y, max.y);
 
     gameObject.transform.localPosition = pos;
 
@@ -58,8 +60,8 @@ public class PlayerController : MonoBehaviour {
   IEnumerator Shoot()
   {
     while (Input.GetButton("Primary Fire")) {
-      yield return new WaitForSeconds (shootDelay);
-      GameObject go = (GameObject) Instantiate (bulletPrefab, transform.position, transform.rotation);
+      yield return new WaitForSeconds (_shootDelay);
+      Instantiate (_bulletPrefab, transform.position, transform.rotation);
     }
   }
 }
