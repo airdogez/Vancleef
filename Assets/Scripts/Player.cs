@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
-public class PlayerController : MonoBehaviour {
+public class Player : MonoBehaviour {
 
   private Vector3 leftBottom;
   private Vector3 rightTop;
@@ -55,6 +54,12 @@ public class PlayerController : MonoBehaviour {
     //Shoot Bullets
     if (Input.GetButtonDown("Primary Fire")) 
       StartCoroutine (Shoot ());
+
+  }
+
+  void OnTriggerEnter2D(Collider2D other){
+    if(other.CompareTag("EnemyBullet"))
+      Destroy(gameObject);
 
   }
 

@@ -4,23 +4,18 @@ using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
 
-
-  public Bullet playerBullet;
-  public Enemy enemy;
+  public Enemy _enemy;
 
   static public long score;
-  static Stack<Bullet> playerBulletStack;
+
+  private Vector3 leftBottom;
+  private Vector3 rightTop;
   // Use this for initialization
   void Start () {
-    playerBulletStack = new Stack<Bullet>();
     score = 0;
 
-    for (int i = 0; i < 10; i++)
-    {
-      Bullet newBullet =  Instantiate(playerBullet, Vector3.zero, Quaternion.identity) as Bullet;
-      newBullet.gameObject.active = false;
-      playerBulletStack.Push(newBullet);
-    }
+    Util.ComputeResponsiveScreenPoints(Camera.main, out leftBottom, out rightTop);
+
     StartCoroutine(SpawnEnemy());
   }
 
@@ -30,9 +25,9 @@ public class GameController : MonoBehaviour {
 
   IEnumerator SpawnEnemy() {
     while(true){
-      float randomX = Random.Range(-4.0f, 4.0f);
+      float randomX = Random.Range(leftBottom.x + 0.3f, rightTop.x - 0.3f);
       Debug.Log("Spawn enemy");
-      Instantiate(enemy, new Vector3(randomX, 1, 0), Quaternion.identity);
+      Instantiate(_enemy, new Vector3(randomX, rightTop.y, 0), Quaternion.identity);
       yield return new WaitForSeconds(3);
     }
   }
