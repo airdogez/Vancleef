@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21251172}
   - 61: {fileID: 6177284}
   - 50: {fileID: 5053708}
-  - 114: {fileID: 11418362}
+  - 114: {fileID: 11487000}
   m_Layer: 9
   m_Name: prefab_player_bullet
   m_TagString: PlayerBullet
@@ -62,7 +62,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.16}
---- !u!114 &11418362
+--- !u!114 &11487000
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 173354}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aa7b13b633ce7742bc9a274e1444b6d, type: 3}
+  m_Script: {fileID: 11500000, guid: 92e62760b52e944738601360bc15dc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10

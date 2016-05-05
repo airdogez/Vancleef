@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
 
-  public Enemy _enemy;
+  public GameObject _enemy;
 
   static public long score;
 
@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour {
       float randomX = Random.Range(leftBottom.x + 0.3f, rightTop.x - 0.3f);
       Debug.Log("Spawn enemy");
       Instantiate(_enemy, new Vector3(randomX, rightTop.y, 0), Quaternion.identity);
-      yield return new WaitForSeconds(3);
+      yield return new WaitForSeconds(1);
     }
   }
 }

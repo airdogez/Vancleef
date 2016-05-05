@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//Base clase for all Spaceshipt, defines movement and shoot behaviour
+//Base clase for all Spaceships, defines movement and shoot behaviour
 [RequireComponent(typeof(Rigidbody2D))]
 public class Spaceship : MonoBehaviour {
 

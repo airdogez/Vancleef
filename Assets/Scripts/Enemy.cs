@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
   public float speed;
 
   Spaceship spaceship;
+  private float x;
 
   void OnTriggerEnter2D(Collider2D other)
   {
@@ -21,20 +22,23 @@ public class Enemy : MonoBehaviour {
   // Use this for initialization
   void Start () {
     spaceship = GetComponent<Spaceship>();
-    spaceship.Move(transform.up * -1);
+    x = 0f;
     StartCoroutine(Shoot());
   }
 
   // Update is called once per frame
   void Update () {
     Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0,0));
+    x+=0.15f;
+    Vector2 sine = new Vector2(Mathf.Sin(x),-1f);
+    spaceship.Move(sine.normalized);
     if (transform.position.y < min.y)
       Destroy (gameObject);
   }
 
   IEnumerator Shoot(){
     while(true){
-      yield return new WaitForSeconds(1.4f);
+      yield return new WaitForSeconds(1f);
       for (int i = 0; i < transform.childCount; i++)
       {
         Transform shootPosition = transform.GetChild(i);

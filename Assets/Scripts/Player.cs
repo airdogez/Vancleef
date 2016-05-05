@@ -67,7 +67,8 @@ public class Player : MonoBehaviour {
   void OnTriggerEnter2D(Collider2D other){
     if(other.CompareTag("EnemyBullet")) {
       Destroy(other.gameObject);
-      //Destroy(gameObject);
+      Destroy(gameObject);
+      Debug.Log("Player Killed");
     }
   }
 
