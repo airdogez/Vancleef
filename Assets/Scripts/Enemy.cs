@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour {
   public EnemyBullet _enemyBullet;
   public float speed;
 
+  Spaceship spaceship;
+
   void OnTriggerEnter2D(Collider2D other)
   {
     if(!other.CompareTag("EnemyBullet")){
@@ -18,25 +20,25 @@ public class Enemy : MonoBehaviour {
   }
   // Use this for initialization
   void Start () {
+    spaceship = GetComponent<Spaceship>();
+    spaceship.Move(transform.up * -1);
     StartCoroutine(Shoot());
   }
 
   // Update is called once per frame
   void Update () {
-    GetComponent<Rigidbody2D>().velocity = transform.up.normalized * speed * -1f;
     Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0,0));
     if (transform.position.y < min.y)
       Destroy (gameObject);
-
   }
 
   IEnumerator Shoot(){
     while(true){
       yield return new WaitForSeconds(1.4f);
-      for (int i = 0; i < 3; i++)
+      for (int i = 0; i < transform.childCount; i++)
       {
-        Instantiate(_enemyBullet, transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
+        Transform shootPosition = transform.GetChild(i);
+        spaceship.Shoot(shootPosition);
       }
     }
   }

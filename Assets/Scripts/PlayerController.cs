@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
   private Vector3 leftBottom;
   private Vector3 rightTop;
@@ -55,13 +55,6 @@ public class Player : MonoBehaviour {
     if (Input.GetButtonDown("Primary Fire")) 
       StartCoroutine (Shoot ());
 
-  }
-
-  void OnTriggerEnter2D(Collider2D other){
-    if(other.CompareTag("EnemyBullet")) {
-      Destroy(other.gameObject);
-      //Destroy(gameObject);
-    }
   }
 
   IEnumerator Shoot()
