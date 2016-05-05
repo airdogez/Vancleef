@@ -6,10 +6,9 @@ public class Player : MonoBehaviour {
   private Vector3 leftBottom;
   private Vector3 rightTop;
 
-  public GameObject _bulletPrefab;
+  public PlayerBullet _bulletPrefab;
   public float _speed;
   public float _shootDelay;
-
 
   void Start () {
     //Set initial position of player 
@@ -24,6 +23,14 @@ public class Player : MonoBehaviour {
     pos.y = Mathf.Lerp(rightTop.y, leftBottom.y, 0.85f);
 
     gameObject.transform.localPosition = pos;
+
+    /* How to add a new bullet
+     *GameObject newShoot = new GameObject();
+     *Vector2 bullpos = transform.position;
+     *bullpos.y += 0.2f;
+     *newShoot.transform.position = bullpos;
+     *newShoot.transform.parent = this.transform;
+     */
 
   }
 
@@ -68,7 +75,11 @@ public class Player : MonoBehaviour {
   {
     while (Input.GetButton("Primary Fire")) {
       yield return new WaitForSeconds (_shootDelay);
-      Instantiate (_bulletPrefab, transform.position, transform.rotation);
+      for (int i = 0; i < transform.childCount; i++)
+      {
+        Transform shootPosition = transform.GetChild(i);
+        Instantiate (_bulletPrefab, shootPosition.position, shootPosition.rotation);
+      }
     }
   }
 }
