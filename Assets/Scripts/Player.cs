@@ -79,7 +79,11 @@ public class Player : MonoBehaviour {
       for (int i = 0; i < transform.childCount; i++)
       {
         Transform shootPosition = transform.GetChild(i);
-        Instantiate (_bulletPrefab, shootPosition.position, shootPosition.rotation);
+        GameObject bullet = Util.LoadPFab("Prefabs/prefab_player_bullet");
+        bullet.transform.position = shootPosition.position;
+        bullet.transform.rotation = shootPosition.rotation;
+        GameObject goBulletLayer = GameObject.Find("Layer_Bullets");
+        bullet.transform.parent = goBulletLayer.transform;
       }
     }
   }

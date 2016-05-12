@@ -13,7 +13,9 @@ public class Spaceship : MonoBehaviour {
   public GameObject _bullet;
 
   public void Shoot(Transform origin){
-    Instantiate(_bullet, origin.position, origin.rotation);
+    var bullet = (GameObject) Instantiate(_bullet, origin.position, origin.rotation);
+    GameObject goLayerBullets = GameObject.Find("Layer_Bullets");
+    bullet.transform.parent = goLayerBullets.transform;
   }
 
   public void Move(Vector2 direction){
