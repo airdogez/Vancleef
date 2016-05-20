@@ -10,8 +10,6 @@ public class BaseBullet : MonoBehaviour{
 
   public bool IsAlive;
   //Posicion
-  //
-  
   Vector3 leftBottom;
   Vector3 rightTop;
 

@@ -37,7 +37,6 @@ public class GameController : MonoBehaviour {
       GameObject enemy = Util.LoadPFab("Prefabs/prefab_enemy");
       enemy.transform.position = new Vector3(randomX, rightTop.y, 0);
       GameObject goEnemyLayer = GameObject.Find("Layer_Enemies");
-      enemy.transform.parent = goEnemyLayer.transform;
       //Instantiate(_enemy, new Vector3(randomX, rightTop.y, 0), Quaternion.identity);
       yield return new WaitForSeconds(1);
     }
