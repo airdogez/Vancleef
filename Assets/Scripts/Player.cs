@@ -70,6 +70,11 @@ public class Player : MonoBehaviour {
       Destroy(gameObject);
       Debug.Log("Player Killed");
     }
+    else if (other.CompareTag("Coin")){
+      Destroy(other.gameObject);
+      //Add Points
+      Debug.Log("Coin GET");
+    }
   }
 
   IEnumerator Shoot()
@@ -78,7 +83,7 @@ public class Player : MonoBehaviour {
       yield return new WaitForSeconds (_shootDelay);
       for (int i = 0; i < transform.childCount; i++)
       {
-        Transform shootPosition = transform.GetChild(i);
+       Transform shootPosition = transform.GetChild(i);
         GameObject bullet = Util.LoadPFab("Prefabs/prefab_player_bullet");
         bullet.transform.position = shootPosition.position;
         bullet.transform.rotation = shootPosition.rotation;

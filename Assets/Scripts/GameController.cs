@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour {
     GameObject.Find("prefab_player").GetComponent<Player>();
     score = 0;
 
-    GameObject goEnemyLayer = GameObject.Find("Layer_Enemy");
+    mGoEnemyLayer = GameObject.Find("Layer_Enemies");
     Util.ComputeResponsiveScreenPoints(Camera.main, out leftBottom, out rightTop);
     StartCoroutine(SpawnEnemy());
   }
