@@ -10,9 +10,9 @@ public class Player : MonoBehaviour {
   public float _speed;
   public float _shootDelay;
 
-    public AnimationClip movement;
+    public Animator movement;
 
-  void Start () {
+    void Start () {
     //Set initial position of player 
     leftBottom = Vector3.zero;
     rightTop = Vector3.zero;
@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
     pos.y = Mathf.Lerp(rightTop.y, leftBottom.y, 0.85f);
 
     gameObject.transform.localPosition = pos;
+
+        movement = GetComponent<Animator>();
 
     /* How to add a new bullet
      *GameObject newShoot = new GameObject();
@@ -44,11 +46,22 @@ public class Player : MonoBehaviour {
 
         if (x < 0)
         {
-            movement = Resources.Load<AnimationClip>("Animations/Player/TurnLeft.anim");
-            this.GetComponent
+            movement.SetTrigger("TurnLeft");
+            movement.SetBool("Turning", true);
         }
 
-    Vector2 pos = gameObject.transform.localPosition;
+        if (x > 0)
+        {
+            movement.SetTrigger("TurnRight");
+            movement.SetBool("Turning", true);
+        }
+
+        if (x == 0)
+        {
+            movement.SetBool("Turning", false);
+        }
+
+        Vector2 pos = gameObject.transform.localPosition;
     pos.x += x * mod * Time.deltaTime;
     pos.y += y * mod * Time.deltaTime;
 
