@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 445bbf8182f254689be2cd6c168c1565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyBullet: {fileID: 0}
+  _enemyBullet: {fileID: 11458556, guid: 82de7f2ea14404f038e3df0e9b5afc8d, type: 2}
   speed: 2
 --- !u!212 &21213256
 SpriteRenderer:
