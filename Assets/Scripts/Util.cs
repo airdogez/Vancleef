@@ -1,7 +1,7 @@
-﻿using System;
+﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 
 public static class Util{
@@ -52,6 +52,32 @@ public static class Util{
         break;
       }
     }
+    return result;
+  }
+
+  public static Dictionary<string, object> ParseScript(string script) {
+    Dictionary<string, object> result = new Dictionary<string, object> ();
+
+    string[] prop = script.Split (';');
+
+    for (int i = 0; i < prop.Length; i++) {
+      string[] objValue = prop [i].Split(':');
+
+      string key = objValue [0];
+      float resFloat = 0;
+      bool resBool = false;
+
+      if (float.TryParse (objValue [1], out resFloat)) {
+        result[key] = resFloat;
+      }
+      else if (bool.TryParse (objValue [1], out resBool)) {
+        result[key] = resBool;
+      }
+      else {
+        result[key] = objValue [1];
+      }
+    }
+
     return result;
   }
 

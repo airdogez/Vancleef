@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
   private Vector3 leftBottom;
   private Vector3 rightTop;
   private BulletFactory mBulletFactory;
+  private GameObject mGoEnemyLayer;
 
   public BulletFactory BulletFactory{get {return mBulletFactory;}}
 
@@ -36,8 +37,7 @@ public class GameController : MonoBehaviour {
       Debug.Log("Spawn enemy");
       GameObject enemy = Util.LoadPFab("Prefabs/prefab_enemy");
       enemy.transform.position = new Vector3(randomX, rightTop.y, 0);
-      GameObject goEnemyLayer = GameObject.Find("Layer_Enemies");
-      //Instantiate(_enemy, new Vector3(randomX, rightTop.y, 0), Quaternion.identity);
+      enemy.transform.parent = mGoEnemyLayer.transform;
       yield return new WaitForSeconds(1);
     }
   }
