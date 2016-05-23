@@ -10,6 +10,8 @@ public class Player : MonoBehaviour {
   public float _speed;
   public float _shootDelay;
 
+    public AnimationClip movement;
+
   void Start () {
     //Set initial position of player 
     leftBottom = Vector3.zero;
@@ -39,6 +41,12 @@ public class Player : MonoBehaviour {
     float x = Input.GetAxis("Horizontal");
     float y = Input.GetAxis("Vertical");
     float mod = (Input.GetButton("Slow Down")) ? 3f : 10f;
+
+        if (x < 0)
+        {
+            movement = Resources.Load<AnimationClip>("Animations/Player/TurnLeft.anim");
+            this.GetComponent
+        }
 
     Vector2 pos = gameObject.transform.localPosition;
     pos.x += x * mod * Time.deltaTime;
