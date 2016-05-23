@@ -10,7 +10,9 @@ public class Player : MonoBehaviour {
   public float _speed;
   public float _shootDelay;
 
-  void Start () {
+    public Animator movement;
+
+    void Start () {
     //Set initial position of player 
     leftBottom = Vector3.zero;
     rightTop = Vector3.zero;
@@ -23,6 +25,8 @@ public class Player : MonoBehaviour {
     pos.y = Mathf.Lerp(rightTop.y, leftBottom.y, 0.85f);
 
     gameObject.transform.localPosition = pos;
+
+        movement = GetComponent<Animator>();
 
     /* How to add a new bullet
      *GameObject newShoot = new GameObject();
@@ -40,7 +44,24 @@ public class Player : MonoBehaviour {
     float y = Input.GetAxis("Vertical");
     float mod = (Input.GetButton("Slow Down")) ? 3f : 10f;
 
-    Vector2 pos = gameObject.transform.localPosition;
+        if (x < 0)
+        {
+            movement.SetTrigger("TurnLeft");
+            movement.SetBool("Turning", true);
+        }
+
+        if (x > 0)
+        {
+            movement.SetTrigger("TurnRight");
+            movement.SetBool("Turning", true);
+        }
+
+        if (x == 0)
+        {
+            movement.SetBool("Turning", false);
+        }
+
+        Vector2 pos = gameObject.transform.localPosition;
     pos.x += x * mod * Time.deltaTime;
     pos.y += y * mod * Time.deltaTime;
 
