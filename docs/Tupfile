@@ -1,0 +1,1 @@
+: foreach *.md |> pandoc --template=template.latex -o out/%B.pdf %f |> out/%B.pdf
