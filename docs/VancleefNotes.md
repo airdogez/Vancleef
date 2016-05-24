@@ -1,6 +1,8 @@
-=Vancleef Notes=
+% Vancleef Notes
+% Andres Revolledo
+% \today
 
-==Changes to make==
+# Changes to make
 - Remove Hangar/Store, dont break the game flow, keep player in action(Sprint 3 will be when we decide if to implement this)
 - Maybe keep some form of pause from action to not overload players
 - There will be 2 character ships: Vancleef & Reol (New sprites, Green and Purple pallet)
@@ -22,11 +24,11 @@
 - HUD will be a simple display of score and bombs, maybe a timer.
 - For dificulty have enemies increase the number of bullets they shoot and even make their patterns more dificult.
 
-==Characters==
+#Character
 Both character must be recognisable while player, so they must have a brigth, distiguishable color
 Make them look diferent from each other, and have them make sense with their bullet patterns.
 
-===Vancleef===
+## Vancleef
 * Niveles de daño de balas:
   1) Cada bala hace 1 de daño
   2) Cada bala hace 1.5 de daño
@@ -41,12 +43,11 @@ Make them look diferent from each other, and have them make sense with their bul
 - Shoots a pair of bullets
 - Maybe a powerup increased the number of bullets per shoot
 
-===Reol===
+## Reol
 * Niveles de daño de balas:
   1) Cada bala hace 0.7 de daño
   2) Cada bala hace 1 de daño
   3) Cada bala hace 1.3 de daño
-  
 * Patron de balas:
 tendrán* Dispara 3 balas individuales rotadas en un angulo de 20 grados con respecto al punto de origen.
   * Estas balas tendrán un movimiento ondulado pero se moverán en una recta que sigue su dirección original.
@@ -55,33 +56,26 @@ tendrán* Dispara 3 balas individuales rotadas en un angulo de 20 grados con res
 - Purple color pallet
 - Shoots 3 wavy bullets in a 20 degree angle from each other.
 
-==Enemies==
+#Enemies
 For now they will be identified by their shooting pattern (Enemy = Bullet)
 All must be dark/threatening looking, still keeping a ship look
-Extra enemies ideas: 
+
+##Extra enemies ideas: 
 - Moves towards the player, suicide bomber
 - Stays on screen and must be killed
-===Triple Way===
+
+##Triple Way
 - Has a sigle canon in front that shoots 3 bullets in diferent directions
-===Full Circle===
+
+##Full Circle
 - Must be some kind of 8 point star shaped ship, 
-===Wave===
-===Triple way wave===
 
-* Tabla de Balance entre jugadores
-* Daño de balas a enemigos
-* Evolucion de balas pra cada jugador
-* Evolucion de dificultad de cada enemigo
-* Porque y como aparecen los objetos
-* Listar todos los objetos
-* Tabla de atributos de cada enemigo
-* Monedas deben tener un fin
-* Falta el escudo
-* Movimiento de grupo de enemigos
-* Flujo de pantallas
-* Espcificar hit boxe
+##Wave
 
-==Powerups==
+##Triple way wave
+
+
+#Powerups
 * Escudo:
   * Tendrá un tiempo de duración
   * Dará inmunidad al jugador mientras este activo
@@ -91,3 +85,16 @@ Extra enemies ideas:
 * Aumento de daño:
   * Mejorara el daño que cada bala del jugador realiza. El numero que incrementa lo define cada personaje.
 
+#Notas
+* Tabla de Balance entre jugadores
+* Daño de balas a enemigos
+* Evolución de balas para cada jugador
+* Evolución de dificultad de cada enemigo
+* Porque y como aparecen los objetos
+* Listar todos los objetos
+* Tabla de atributos de cada enemigo
+* Monedas deben tener un fin
+* Falta el escudo
+* Movimiento de grupo de enemigos
+* Flujo de pantallas
+* Especificar hitbox
