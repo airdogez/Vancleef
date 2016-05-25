@@ -188,21 +188,6 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
-$if(title)$
-\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
-$endif$
-$if(subtitle)$
-\providecommand{\subtitle}[1]{}
-\subtitle{$subtitle$}
-$endif$
-$if(author)$
-\author{$for(author)$$author$$sep$ \and $endfor$}
-$endif$
-$if(institute)$
-\institute{$for(institute)$$institute$$sep$ \and $endfor$}
-$endif$
-\date{$date$}
-
 \begin{document}
 
 %%%%
@@ -223,7 +208,7 @@ $endif$
 \large $for(author)$$author$$sep$, $endfor$\\[1.5cm]
 \vfill
 $if(date)$
-{\large \today}\\[0.3cm]
+{\large $date$}\\[0.3cm]
 $endif$
 \end{titlepage}
 $endif$

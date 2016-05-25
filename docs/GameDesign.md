@@ -7,24 +7,24 @@ author:
   - "Alvaro Barua"
 institution: "Universidad Peruana de Ciencias Aplicadas"
 documentclass: article
-header-includes:
-  - \usepackage{float}
+papersize: a4
+fontsize: 12pt
+date: \today
 classoption:
   - titlepage
-papersize: a4
-lang: es
-fontsize: 12pt
+header-includes:
+  - \usepackage{float}
+  - \usepackage[spanish]{babel}
 numbersections: true
-date: true
 toc: true
 lof: true
 lot: true
 graphics: true
 ...
 
-# Cambios
-
 # Visión del proyecto
+
+## Sinopsis del juego
 
 ##Genero
 
@@ -92,7 +92,7 @@ Botón 1:
 Botón 2:
 : Permite disparar la bombas, arma secundaria
 
-### Movimiento
+## Movimiento
 
 Al moverse no contara con simulación de física, el movimiento sera 1:1, no habrá aceleración ni inercia. Una vez se deje de apretar los controles el personaje se detendrá y reproducirá la animación de _Idle_. Cuando se encuentre en movimiento se representara con una animación que muestre los motores de la nave funcionando y cuando vaya a la izquierda o derecha la nave deberá reflejarlo visualmente.
 
@@ -136,7 +136,7 @@ Tendrá la velocidad mas alta de los dos, representado visualmente por los dos m
 Vancleef tendrá láseres clásicos de color azul, estas tendrán un movimiento lineal hacia arriba y todas la balas serán paralelas, comenzara teniendo solo 1 punto de disparo pero a cada nivel incrementado aumentara, en la siguiente tabla se muestra como evoluciona, el daño que cada bala hace y la velocidad de viaje que tienen.
 
 | Nivel | Daño | Velocidad | Patrón                                      |
-|:-----:+-----:+----------:+:-------------------------------------------:|
+|------:+-----:+----------:+:-------------------------------------------:|
 | 1     | 1    | 1         | ![Vancleef_1](images/vancleef_bullet_1.png) |
 | 2     | 1.2  | 1.5       | ![Vancleef_2](images/vancleef_bullet_2.png) |
 | 3     | 1.5  | 2         | ![Vancleef_3](images/vancleef_bullet_3.png) |
@@ -170,10 +170,16 @@ Las balas de Reol tendrán un movimiento en onda y un aspecto de láser eléctri
 
 :Patrones de Balas Reol
 
+## Bomba
+Ambos personajes contaran con un ataque secundario que es un bomba, esta bomba eliminara por completo todos los enemigos y balas que se encuentren en pantalla al momento de ser usada. Tendra un limite inicial de 1 bomba disponible máxima y este podrá ser incrementado con el powerup Incremento bombas especificado mas adelante, ademas si obtiene mas bombas que el limite, esto generara 1000 puntos extra. Al iniciar el juego no se contara con ninguna bomba disponible y con un máximo posible de 1 y se tendrá que eliminar naves enemigas para obtener alguna.
 
-### Balance
+Al usar la bomba flotara hacia arriba y deberá de colisionar con algún enemigo o bala para poder explotar, con lo que se mostrara un efecto de destrucción que tornara la pantalla blanca por unos instantes, esto elimina a todos los enemigos de pantalla a excepción del jefe, el cual sufre un 5% de daño sobre su vida restante. En el caso que no colisione, saldrá de la pantalla y no tendrá efecto.
 
-# Enemigos
+El HUD debera mostrar la cantidad de bombas que se tienen, mostrando el total de bombas que se pueden tener a la vez, mostrando el _sprite_ cuando esta disponible una bomba y una silueta cuando no se tiene una bomba.
+
+# Componentes
+
+## Enemigos
 Esta sección explica cada tipo de nave enviga que se presentara al jugador así como sus distintos comportamientos y las variaciones que cada uno presenta al incrementar la dificultad del juego a medida que avanza el tiempo.
 
 El juego cuenta con 6 tipo de enemigos básicos y cada uno de estos tiene variaciones que incrementan su dificultad. A su vez cada uno de ellos tendrá un patrón diferente de disparo y se podrán diferenciar visualmente. Los enemigos son nombrado apartir de sus patrones, estos son: Simple, Kamikaze, Circular, Onda, Lock-on y Jefe.
@@ -181,26 +187,51 @@ El juego cuenta con 6 tipo de enemigos básicos y cada uno de estos tiene variac
 Para dar un nivel de satisfacción al jugador, cada enemigo al ser destruido reproducirá una animación de destrucción y a la vez mostrar rápidamente un puntaje que el jugador obtiene por destruirlo, este numero variara según tipo de enemigo y su dificultad. Ademas cada uno tendrá una probabilidad de crear un diamante o powerup al ser destruido, en el detalle de cada uno se definirá que powerups podrán generar. El tipo de diamante generado varia solo por la dificultad de la nave enemiga, el detalle de cada diamante se vera mas adelante.
 
 El nivel de dificultad de los enemigos es determinada por la cantidad de tiempo que se va jugando, en la seccion Entorno se describe cuando se cambia de dificultad.
+<!--- Definir los puntajes, patrones de balas, patrones de movimiento... --->
+<!--- Definir cada variacion posible (3 min excepto jefe) ... --->
 
-## Simple
+### Simple
 
-## Kamikaze
+### Kamikaze
 
-## Cirucular
+### Cirucular
 
-## Onda
+### Onda
 
-## Lock-on
+### Lock-on
 
-## Jefe
+### Jefe
 
-# _Powerups_ y Diamantes
-Los powerups son objetos flotantes en la pantalla que aparecen al eliminar enemigos 
+## _Powerups_
+Los powerups son objetos flotantes en la pantalla que aparecen al eliminar enemigos, cada uno de ellos tendrá un efecto diferente sobre el jugador si es que se logra coger.
+
+* Subir velocidad jugador:
+: Incrementara el nivel de velocidad del personaje, de ser que se encuentre en el nivel maximo, se otorgara 300 puntos
+
+* Subir nivel balas:
+: Incrementara el nivel de balas del personaje, de ser que se encuentre en el nivel maximo, se otorgara 300 puntos
+
+* Escudo:
+: Activa un escudo, el cual estara activo por 10 segundos, todas las balas enemigas que hagan contacto con el escudo seran eliminadas.
+: En caso se obtenga otro escudo este solo otorgara un puntaje extra de 2000 puntos, el tiempo previo del escudo se mantendra.
+
+* Bomba extra:
+: Agrega una bomba, si ya se tiene el máximo de bombas, este powerup otorgara 1000 puntos.
+
+* Incremento Bombas:
+: Incrementa el maximo posible de bombas, no incrementa el numero de bombas disponibles, el total maximo posible seran 3. Si ya se tiene 3, este powerup otorgara 1500 puntos.
+
+## Diamantes
+Los diamantes darán puntos extra al jugador, estos deberán ser atrapados antes de que puedan otorgar el puntaje. De ser que salgan de la pantalla, estos se perderán.
 
 # Entorno
 Esta sección explica cada ambiente que el jugador podrá ver en el juego, las variaciones entre ellos, como su apariencia gráfica y sonora, como se generan las olas de enemigos y que patrones deberá de seguir en cada uno de ellos y el objetivo.
 
+<!--- Que enemigos se intrucen en que momento, cuando se pasa a un siguiente entorno, --->
+
 # Flujo de Pantallas
+
+# Interfases
 
 # Arte
 
