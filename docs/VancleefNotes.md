@@ -3,6 +3,8 @@
 % \today
 
 # Changes to make
+* El juego debe tener un final, que sea muy dificil de lograr y se tenga que valer de sus habilidades en el juego y del reconocimiento de patrones de enemigos.
+* El final debera de ser un jefe 
 - Remove Hangar/Store, dont break the game flow, keep player in action(Sprint 3 will be when we decide if to implement this)
 - Maybe keep some form of pause from action to not overload players
 - There will be 2 character ships: Vancleef & Reol (New sprites, Green and Purple pallet)

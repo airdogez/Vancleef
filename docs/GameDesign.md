@@ -25,6 +25,7 @@ graphics: true
 # Visión del proyecto
 
 ## Sinopsis del juego
+Las autoridades del imperio galáctico de Trantor están tras de ti, por un crimen que no cometiste. Escoge entre VanCleef o Reol y usa sus diferentes naves y habilidades para poder derrotar a tus enemigos.
 
 ##Genero
 
@@ -116,9 +117,7 @@ A continuación se detallan cada uno de los dos personajes jugables, una pequeñ
 Las balas de ambos personajes tendrán 3 atributos básicos, la velocidad de movimiento, el daño que hacen y su representación gráfica.
 
 ###Vancleef
-
- %%%BIO%%%
-- Green color pallet
+Edwin VanCleef fue originalmente un piloto de carga para el imperio galáctico de Trantor luego de su reconstrucción al final de de la Segunda Guerra contra Anacreon. Luego de un conflicto con la nobleza de Trantor, que se negaba a pagar por un contrato hecho con la asociación de pilotos de carga intergaláctica, se originó una revuelta en la cual la reina Tiffin Wrynn fue asesinada. Dado que la revuelta era liderada por VanCleef se le atribuyó a el crimen a él. Ahora VanCleef debe escapar del imperio, quien lo persigue injustamente.
 
 #### Velocidad
 
@@ -144,8 +143,7 @@ Vancleef tendrá láseres clásicos de color azul, estas tendrán un movimiento 
 : Patrones de Balas Vancleef
 
 ###Reol
-
-  %%%BIO%%%
+Conocida en todo el imperio galáctico, Reol fue una joven cantante y jugadora profesional de StarCraft 2, quien en su tiempo tuvo mucho éxito, haciendo tours y participando en torneos por toda la galaxia. Todo esto de derrumbó cuando hubo un intento de asesinato contra ella en Trantor, durante un concierto, en el cual en un acto de defensa propia asesinó a su atacante. Las autoridades no consideraron que esta muerte fue resultado de defensa propia y trataron de arrestar a Reol, quien decidió escapar en una nave, la cual no le resultó dificil de manejar gracias a sus habilidades en StarCraft 2.
 
 #### Velocidad
 Sera mas lenta con respecto a Vancleef y se representara esto visualmente por un motor mas grande en la parte posterior, ya que su nave se enfoca mas en el área de disparo lo cual requiere mas energía para las armas. La siguiente tabla es el valor base de velocidad por cada nivel:
