@@ -169,11 +169,23 @@ Las balas de Reol tendrán un movimiento en onda y un aspecto de láser eléctri
 :Patrones de Balas Reol
 
 ## Bomba
-Ambos personajes contaran con un ataque secundario que es un bomba, esta bomba eliminara por completo todos los enemigos y balas que se encuentren en pantalla al momento de ser usada. Tendra un limite inicial de 1 bomba disponible máxima y este podrá ser incrementado con el powerup Incremento bombas especificado mas adelante, ademas si obtiene mas bombas que el limite, esto generara 1000 puntos extra. Al iniciar el juego no se contara con ninguna bomba disponible y con un máximo posible de 1 y se tendrá que eliminar naves enemigas para obtener alguna.
+Ambos personajes contaran con un ataque secundario que es un bomba, esta bomba eliminara por completo todos los enemigos y balas que se encuentren en pantalla al momento de ser usada. Tendra un limite inicial de 1 bomba disponible máxima y este podrá ser incrementado con el powerup Incremento bombas especificado en la sección de componentes, en caso se obtenga mas bombas que el limite, esto generara 1000 puntos extra. Al iniciar el juego no se contara con ninguna bomba disponible y con un máximo posible de 1 y se tendrá que eliminar naves enemigas para obtener alguna o realizar graze, explicado mas adelante.
 
 Al usar la bomba flotara hacia arriba y deberá de colisionar con algún enemigo o bala para poder explotar, con lo que se mostrara un efecto de destrucción que tornara la pantalla blanca por unos instantes, esto elimina a todos los enemigos de pantalla a excepción del jefe, el cual sufre un 5% de daño sobre su vida restante. En el caso que no colisione, saldrá de la pantalla y no tendrá efecto.
 
-El HUD debera mostrar la cantidad de bombas que se tienen, mostrando el total de bombas que se pueden tener a la vez, mostrando el _sprite_ cuando esta disponible una bomba y una silueta cuando no se tiene una bomba.
+El HUD deberá mostrar la cantidad de bombas que se tienen, mostrando el total de bombas que se pueden tener a la vez, mostrando el _sprite_ cuando esta disponible una bomba y una silueta cuando no se tiene una bomba.
+<!-- Imagen de HUD, sprite de la bomba y explosion -->
+
+## _Graze_
+_Graze_ se refiere a cuando el jugador se acerca bastante a los proyectiles enemigos pero no colisiona con estos. Esta mecánica esta ligada a las bombas, ya que recompensa al jugador incrementando el medidor de carga de bomba, cada vez que se haga graze incrementara en un punto la barra de progreso en el HUD, cuando esta se completa se otorgara al jugador con una bomba extra, si ya se ha llegado al limite de bombas hacer graze otorgara 10 puntos extra.
+<!-- Imagen de HUD y como realizar graze -->
+
+## _Hitbox_
+El _hitbox_ se refiere a la área de colisión del jugador, esta sera mas pequeña que la representación gráfica de la nave, siendo de un circulo no mayor a 5 pixels, así permitiendo al jugador poder esquivar todas las balas enemigas posibles, ya que estas podrán llegar a cubrir gran cantidad de la pantalla.
+<!-- Imagen del hitbox de balas sobre un personaje -->
+
+Ademas para la recolección de los objetos como diamantes y powerups se contara con otro _hitbox_ del tamaño del _spirte_ que solo tendrá efecto con estos objetos.
+<!-- Imagen del hitbox de objetos -->
 
 # Componentes
 
@@ -226,6 +238,8 @@ Los diamantes darán puntos extra al jugador, estos deberán ser atrapados antes
 Esta sección explica cada ambiente que el jugador podrá ver en el juego, las variaciones entre ellos, como su apariencia gráfica y sonora, como se generan las olas de enemigos y que patrones deberá de seguir en cada uno de ellos y el objetivo.
 
 <!--- Que enemigos se intrucen en que momento, cuando se pasa a un siguiente entorno, --->
+
+# Scoring
 
 # Flujo de Pantallas
 
