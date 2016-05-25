@@ -205,15 +205,27 @@ Ademas para la recolección de los objetos como diamantes y powerups se contara 
 ## Enemigos
 Esta sección explica cada tipo de nave enviga que se presentara al jugador así como sus distintos comportamientos y las variaciones que cada uno presenta al incrementar la dificultad del juego a medida que avanza el tiempo.
 
-El juego cuenta con 6 tipo de enemigos básicos y cada uno de estos tiene variaciones que incrementan su dificultad. A su vez cada uno de ellos tendrá un patrón diferente de disparo y se podrán diferenciar visualmente. Los enemigos son nombrado apartir de sus patrones, estos son: Simple, Kamikaze, Circular, Onda, Lock-on y Jefe.
+El juego cuenta con 6 tipo de enemigos básicos y cada uno de estos tiene variaciones que incrementan su dificultad. A su vez cada uno de ellos tendrá un patrón diferente de disparo y se podrán diferenciar visualmente. Los enemigos son nombrado a partir de sus patrones, estos son: Simple, Kamikaze, Circular, Onda, Lock-on y Jefe.
 
 Para dar un nivel de satisfacción al jugador, cada enemigo al ser destruido reproducirá una animación de destrucción y a la vez mostrar rápidamente un puntaje que el jugador obtiene por destruirlo, este numero variara según tipo de enemigo y su dificultad. Ademas cada uno tendrá una probabilidad de crear un diamante o powerup al ser destruido, en el detalle de cada uno se definirá que powerups podrán generar. El tipo de diamante generado varia solo por la dificultad de la nave enemiga, el detalle de cada diamante se vera mas adelante.
 
-El nivel de dificultad de los enemigos es determinada por la cantidad de tiempo que se va jugando, en la seccion Entorno se describe cuando se cambia de dificultad.
+El nivel de dificultad de los enemigos es determinada por la cantidad de tiempo que se va jugando, en la sección Entorno se describe cuando se cambia de dificultad. Todo enemigo que salga de la pantalla sera destruido y no otorgara ningún puntaje.
 <!--- Definir los puntajes, patrones de balas, patrones de movimiento... --->
 <!--- Definir cada variacion posible (3 min excepto jefe) ... --->
+<!--Images de movimineto y de disparos-->
 
 ### Simple
+<!-- BIO -->
+Este enemigo tendrá un patrón de movimiento simple, tendrá un movimiento parabólico, desde donde inicie ira para abajo y al llegar a la parte baja de la pantalla por 10% regresara arriba tratando de ir al centro de la pantalla. Todas las versiones de este enemigo se moverán de la misma manera.
+
+Su patrón básico de disparo serán balas que se mueven en linea recta en una dirección, cada nivel se diferenciara visualemnte por el color de la nave las cuales tendrán un numero diferente de proyectiles y velocidad de viaje diferente. Al ser el primer enemigo su versión inicial tendrá solo 1 hit de vida y siempre debera de ser posible eliminarlo con un disparo. A continuación se muestran las variaciones que tiene y como va evolucionando:
+
+| Nivel | Vida | Tiempo de disparo | Velocidad de balas |   Patron disparo                        |
+|:-----:|-----:|------------------:|-------------------:|:---------------------------------------:|
+|   1   |   1  |   1.5 segundos    |             1 m/s  | ![Simple 1](images/simple_bullet_1.png) |
+|   2   |   2  |   1.2 segundos    |           1.5 m/s  | ![Simple 2](images/simple_bullet_2.png) |
+|   3   | 2.5  |   1.0 segundos    |           2.5 m/s  | ![Simple 3](images/simple_bullet_2.png) |
+|   4   |   3  |   0.8 segundos    |           3.7 m/s  | ![Simple 4](images/simple_bullet_3.png) |
 
 ### Kamikaze
 
@@ -260,6 +272,7 @@ Esta sección explica cada ambiente que el jugador podrá ver en el juego, las v
 # Flujo de Pantallas
 
 # Interfases
+
 
 # Arte
 
