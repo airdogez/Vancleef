@@ -116,6 +116,13 @@ El movimiento del jugador dependerá de la velocidad base del personaje y un mul
 
 Usar el ataque secundario no afecta el movimiento del jugador. En el caso del control análogo para móviles, se utiliza un umbral para determinar si esta en estado normal o lento, no se tomara los valores intermedio.
 
+## Disparo
+El jugador podrá disparar con el botón especificado previamente, para optimización y mecánica se tendrá una cola de 10 balas reutilizables al inicio del juego, de las cuales solo estarán disponibles 3 a la vez, para poder acceder al resto de balas se deberá de obtener un powerup de Incremento de balas, el cual se especifica en la sección powerups.
+
+Esto hace que el jugador tenga que pensar cuando disparar y no mantenga siempre apretado el botón de disparo, el incremento de balas mejorara su capacidad ofensiva pero sin llegar el punto en que pueda limpiar la pantalla sin problemas. 
+
+Todas las balas que salgan de pantalla volverán a ser puestas en cola y podrán volver a ser utilizadas.
+
 ## Personajes
 
 A continuación se detallan cada uno de los dos personajes jugables, una pequeña biografía, las diferentes habilidades de cada uno y como se comparan entre ellos. Los niveles de velocidad y balas son mejoras que se consiguen mediante _powerups_.
@@ -236,6 +243,9 @@ Los powerups son objetos flotantes en la pantalla que aparecen al eliminar enemi
 
 * Incremento Bombas:
 : Incrementa el maximo posible de bombas, no incrementa el numero de bombas disponibles, el total maximo posible seran 3. Si ya se tiene 3, este powerup otorgara 1500 puntos.
+
+* Incremento Balas:
+: Incrementa en 1 la cantidad maxima de balas que puede usar el jugador a la vez, el total sera de 10 y cuando se obtenga desde este punto este powerup se obtendran 100 puntos.
 
 ## Diamantes
 Los diamantes darán puntos extra al jugador, estos deberán ser atrapados antes de que puedan otorgar el puntaje. De ser que salgan de la pantalla, estos se perderán.
