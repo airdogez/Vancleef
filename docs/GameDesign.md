@@ -49,10 +49,13 @@ El juego se podrá controlar con el teclado en el caso de Windows, MacOSX y Linu
 
 ###Teclado
 
+<!--
 \begin{figure}[H]
 \includegraphics{diagrams/keyboard_layout.eps}
 \caption{Layout Teclado}
 \end{figure}
+-->
+![Layout Teclado](diagrams/keyboard_layout.eps)
 
 En azul se resalta la configuración principal, mientras que en rojo los controles secundarios, para los usuarios que sean zurdos o prefieran esa configuración, ambos controles funcionaran a la vez ya que no se interponen.
 
@@ -79,10 +82,13 @@ Shift Izquierdo y Derecho:
 
 ###Móvil
 
+<!--
 \begin{figure}[H]
 \includegraphics{diagrams/mobile_layout.eps}
 \caption{Layout Móvil}
 \end{figure}
+-->
+![Layout Movil](diagrams/mobile_layout.eps)
 
 Análogo:
 : Moverá al jugador en la dirección unitaria que se refleja, las lineas punteadas reflejan un umbral que al pasarlo el jugador tendrá la velocidad normal, todo dentro es el movimiento lento, este umbral tendra un radio de 0.6.
