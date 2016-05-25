@@ -106,7 +106,7 @@ Al moverse no contara con simulación de física, el movimiento sera 1:1, no hab
 El movimiento del jugador dependerá de la velocidad base del personaje y un multiplicador determinado por el estado actual, disparando,  lento y combinación. A continuación es una tabla de como cada estado modifica la velocidad.
 
 | Estado             | Multiplicador |
-|--------------------+--------------:|
+|--------------------|--------------:|
 | Normal             | 1x            |
 | Lento              | 0.4x          |
 | Disparando         | 0.8x          |
@@ -130,7 +130,7 @@ Edwin VanCleef fue originalmente un piloto de carga para el imperio galáctico d
 Tendrá la velocidad mas alta de los dos, representado visualmente por los dos motores que tiene y su basica tecnologia de disparo, la siguiente tabla están los valores de velocidad para cada nivel:
 
 | Nivel | Velocidad |
-|------:+----------:|
+|------:|----------:|
 |     1 |        10 |
 |     2 |        13 |
 |     3 |        16 |
@@ -141,7 +141,7 @@ Tendrá la velocidad mas alta de los dos, representado visualmente por los dos m
 Vancleef tendrá láseres clásicos de color azul, estas tendrán un movimiento lineal hacia arriba y todas la balas serán paralelas, comenzara teniendo solo 1 punto de disparo pero a cada nivel incrementado aumentara, en la siguiente tabla se muestra como evoluciona, el daño que cada bala hace y la velocidad de viaje que tienen.
 
 | Nivel | Daño | Velocidad | Patrón                                      |
-|------:+-----:+----------:+:-------------------------------------------:|
+|------:|-----:|----------:|:-------------------------------------------:|
 | 1     | 1    | 1         | ![Vancleef_1](images/vancleef_bullet_1.png) |
 | 2     | 1.2  | 1.5       | ![Vancleef_2](images/vancleef_bullet_2.png) |
 | 3     | 1.5  | 2         | ![Vancleef_3](images/vancleef_bullet_3.png) |
@@ -155,7 +155,7 @@ Conocida en todo el imperio galáctico, Reol fue una joven cantante y jugadora p
 Sera mas lenta con respecto a Vancleef y se representara esto visualmente por un motor mas grande en la parte posterior, ya que su nave se enfoca mas en el área de disparo lo cual requiere mas energía para las armas. La siguiente tabla es el valor base de velocidad por cada nivel:
 
 | Nivel | Velocidad |
-|------:+----------:|
+|------:|----------:|
 |     1 |         7 |
 |     2 |         9 |
 |     3 |        12 |
@@ -167,7 +167,7 @@ Sera mas lenta con respecto a Vancleef y se representara esto visualmente por un
 Las balas de Reol tendrán un movimiento en onda y un aspecto de láser eléctrico que se sigue un movimiento sinusoidal. La dirección de las balas irán en un arco con respecto al punto de origen, así abarcara una mayor área de ataque. A continuación se muestra como serian los patrones en cada nivel y sus atributos:
 
 | Nivel | Daño | Velocidad |                Patrón               |
-|:-----:+-----:+----------:+:-----------------------------------:|
+|:-----:|-----:|----------:|:-----------------------------------:|
 |   1   |  0.5 |       1.2 | ![Reol_1](images/reol_bullet_1.png) |
 |   2   |  0.8 |       1.8 | ![Reol_2](images/reol_bullet_2.png) |
 |   3   |  1.2 |       2.5 | ![Reol_3](images/reol_bullet_3.png) |
