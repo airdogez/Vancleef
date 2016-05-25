@@ -219,7 +219,7 @@ $endif$
 {\huge \bfseries $title$}\\[0.4cm]
 \HRule\\[1cm]
 \vfill
-\Large Authors\\[0.6cm]
+\Large Autores\\[0.6cm]
 \large $for(author)$$author$$sep$, $endfor$\\[1.5cm]
 \vfill
 $if(date)$

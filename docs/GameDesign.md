@@ -1,6 +1,6 @@
 ---
 title: "Vancleef: Game Design Document"
-revision: "Revisión 1"
+revision: "Revisión 2"
 author: 
   - "Andres Revolledo Galvez"
   - "Rodrigo Linares"
@@ -111,9 +111,9 @@ Usar el ataque secundario no afecta el movimiento del jugador. En el caso del co
 
 ## Personajes
 
-A continuación se detallan cada uno de los dos personajes jugables, una pequeña biografía, las diferentes habilidades de cada uno y como se comparan entre ellos.
+A continuación se detallan cada uno de los dos personajes jugables, una pequeña biografía, las diferentes habilidades de cada uno y como se comparan entre ellos. Los niveles de velocidad y balas son mejoras que se consiguen mediante _powerups_.
 
-
+Las balas de ambos personajes tendrán 3 atributos básicos, la velocidad de movimiento, el daño que hacen y su representación gráfica.
 
 ###Vancleef
 
@@ -122,13 +122,13 @@ A continuación se detallan cada uno de los dos personajes jugables, una pequeñ
 
 #### Velocidad
 
-Tendrá la velocidad mas alta de los dos, con una base de 10 unidades y en la siguiente tabla están los siguientes niveles de velocidad:
+Tendrá la velocidad mas alta de los dos, representado visualmente por los dos motores que tiene y su basica tecnologia de disparo, la siguiente tabla están los valores de velocidad para cada nivel:
 
 | Nivel | Velocidad |
 |------:+----------:|
-| 1     | 10        |
-| 2     | 12        |
-| 3     | 14        |
+|     1 |        10 |
+|     2 |        13 |
+|     3 |        16 |
 
 : Niveles de velocidad Vancleef
 
@@ -141,26 +141,35 @@ Vancleef tendrá láseres clásicos de color azul, estas tendrán un movimiento 
 | 2     | 1.2  | 1.5       | ![Vancleef_2](images/vancleef_bullet_2.png) |
 | 3     | 1.5  | 2         | ![Vancleef_3](images/vancleef_bullet_3.png) |
 
-
-#### Patrones de Disparo
+: Patrones de Balas Vancleef
 
 ###Reol
 
   %%%BIO%%%
 
-
-* Niveles de daño de balas:
-  1) Cada bala hace 0.7 de daño
-  2) Cada bala hace 1 de daño
-  3) Cada bala hace 1.3 de daño
-* Patron de balas:
-tendrán* Dispara 3 balas individuales rotadas en un angulo de 20 grados con respecto al punto de origen.
-  * Estas balas tendrán un movimiento ondulado pero se moverán en una recta que sigue su dirección original.
-  * Las balas se moverán a una velocidad de 0.66.
-
 #### Velocidad
+Sera mas lenta con respecto a Vancleef y se representara esto visualmente por un motor mas grande en la parte posterior, ya que su nave se enfoca mas en el área de disparo lo cual requiere mas energía para las armas. La siguiente tabla es el valor base de velocidad por cada nivel:
 
-#### Patrones de Disparo
+| Nivel | Velocidad |
+|------:+----------:|
+|     1 |         7 |
+|     2 |         9 |
+|     3 |        12 |
+
+: Niveles de velocidad Reol
+
+
+#### Patrones de balas
+Las balas de Reol tendrán un movimiento en onda y un aspecto de láser eléctrico que se sigue un movimiento sinusoidal. La dirección de las balas irán en un arco con respecto al punto de origen, así abarcara una mayor área de ataque. A continuación se muestra como serian los patrones en cada nivel y sus atributos:
+
+| Nivel | Daño | Velocidad |                Patrón               |
+|:-----:+-----:+----------:+:-----------------------------------:|
+|   1   |  0.5 |       1.2 | ![Reol_1](images/reol_bullet_1.png) |
+|   2   |  0.8 |       1.8 | ![Reol_2](images/reol_bullet_2.png) |
+|   3   |  1.2 |       2.5 | ![Reol_3](images/reol_bullet_3.png) |
+
+:Patrones de Balas Reol
+
 
 ### Balance
 
