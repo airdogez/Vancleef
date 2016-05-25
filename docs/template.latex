@@ -221,7 +221,7 @@ $endif$
 \vfill
 \Large Authors\\[0.6cm]
 \large $for(author)$$author$$sep$, $endfor$\\[1.5cm]
-
+\vfill
 $if(date)$
 {\large \today}\\[0.3cm]
 $endif$
