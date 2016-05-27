@@ -33,6 +33,9 @@ Las autoridades del imperio galáctico de Trantor están tras de ti, por un crim
 
 ##Plataformas
 
+## Influencias
+
+## Descripcion del juego
 
 # Jugabilidad
 Esta sección explica la experiencia que el usuario tendrá al jugar y controlar a su personaje, que sentimientos se tratan de evocar en el jugador y explica las mecánicas que cada personaje presenta.
@@ -150,8 +153,8 @@ Vancleef tendrá láseres clásicos de color azul, estas tendrán un movimiento 
 | Nivel | Daño | Velocidad | Patrón                                      |
 |------:|-----:|----------:|:-------------------------------------------:|
 | 1     | 1    | 1         | ![Vancleef_1](images/vancleef_bullet_1.png) |
-| 2     | 1.2  | 1.5       | ![Vancleef_2](images/vancleef_bullet_2.png) |
-| 3     | 1.5  | 2         | ![Vancleef_3](images/vancleef_bullet_3.png) |
+| 2     | 2.2  | 1.5       | ![Vancleef_2](images/vancleef_bullet_2.png) |
+| 3     | 3.6  | 2         | ![Vancleef_3](images/vancleef_bullet_3.png) |
 
 : Patrones de Balas Vancleef
 
@@ -175,9 +178,9 @@ Las balas de Reol tendrán un movimiento en onda y un aspecto de láser eléctri
 
 | Nivel | Daño | Velocidad |                Patrón               |
 |:-----:|-----:|----------:|:-----------------------------------:|
-|   1   |  0.5 |       1.2 | ![Reol_1](images/reol_bullet_1.png) |
-|   2   |  0.8 |       1.8 | ![Reol_2](images/reol_bullet_2.png) |
-|   3   |  1.2 |       2.5 | ![Reol_3](images/reol_bullet_3.png) |
+|   1   |  0.8 |       1.2 | ![Reol_1](images/reol_bullet_1.png) |
+|   2   |  1.6 |       1.8 | ![Reol_2](images/reol_bullet_2.png) |
+|   3   |  2.4 |       2.5 | ![Reol_3](images/reol_bullet_3.png) |
 
 :Patrones de Balas Reol
 
@@ -218,18 +221,57 @@ El nivel de dificultad de los enemigos es determinada por la cantidad de tiempo 
 <!-- BIO -->
 Este enemigo tendrá un patrón de movimiento simple, tendrá un movimiento parabólico, desde donde inicie ira para abajo y al llegar a la parte baja de la pantalla por 10% regresara arriba tratando de ir al centro de la pantalla. Todas las versiones de este enemigo se moverán de la misma manera.
 
-Su patrón básico de disparo serán balas que se mueven en linea recta en una dirección, cada nivel se diferenciara visualemnte por el color de la nave las cuales tendrán un numero diferente de proyectiles y velocidad de viaje diferente. Al ser el primer enemigo su versión inicial tendrá solo 1 hit de vida y siempre debera de ser posible eliminarlo con un disparo. A continuación se muestran las variaciones que tiene y como va evolucionando:
+Su patrón básico de disparo serán balas que se mueven en linea recta en una dirección, cada nivel se diferenciara visualemnte por el color de la nave las cuales tendrán un numero diferente de proyectiles y velocidad de viaje diferente. Al ser el primer enemigo su versión inicial tendrá solo 1 hit de vida y debera incrementar su defensa de tal forma que no pueda ser derrotado con un solo golpe en sus versiones posteriores. A continuación se muestran las variaciones a sus atributos como nave y de sus balas y como evoluciona en cada nivel:
 
-| Nivel | Vida | Tiempo de disparo | Velocidad de balas |   Patron disparo                        |
-|:-----:|-----:|------------------:|-------------------:|:---------------------------------------:|
-|   1   |   1  |   1.5 segundos    |             1 m/s  | ![Simple 1](images/simple_bullet_1.png) |
-|   2   |   2  |   1.2 segundos    |           1.5 m/s  | ![Simple 2](images/simple_bullet_2.png) |
-|   3   | 2.5  |   1.0 segundos    |           2.5 m/s  | ![Simple 3](images/simple_bullet_2.png) |
-|   4   |   3  |   0.8 segundos    |           3.7 m/s  | ![Simple 4](images/simple_bullet_3.png) |
+| Nivel | Vida | Velocidad | Color       | Puntaje |
+|:-----:|-----:|----------:|-------------|--------:|
+|   1   |   1  |    1 m/s  | Rojo        |      30 |
+|   2   | 2.5  |  1.5 m/s  | Azul        |      50 |
+|   3   | 3.5  |  2.5 m/s  | Verde       |      70 |
+|   4   |   5  |  3.7 m/s  | Rojo oscuro |     100 |
+
+: Atributos de enemigo Simple
+
+| Nivel | Tiempo | Velocidad |   Patron disparo                        |
+|:-----:|-------:|----------:|:---------------------------------------:|
+|   1   |   1.5s |    3 m/s  | ![Simple 1](images/simple_bullet_1.png) |
+|   2   |   1.2s |    4 m/s  | ![Simple 2](images/simple_bullet_2.png) |
+|   3   |   1.0s |    5 m/s  | ![Simple 3](images/simple_bullet_2.png) |
+|   4   |   0.8s |    6 m/s  | ![Simple 4](images/simple_bullet_3.png) |
+
+:Atributos de balas Simple
 
 ### Kamikaze
+<!-- BIO -->
+Tratara siempre de seguir al jugador, no podra disparar 
 
-### Cirucular
+### Circular
+
+Este enemigo tendrá una forma similar a la de una estrella, tendrá 4 puntos de disparo principales en apariencia y tendrá un patrón de disparo en el cual las balas formaran un circulo que se va expandiendo, todas la balas iniciaran con una dirección y se moverán rectamente.
+
+Se moverá de manera simple, siempre hacia abajo. No tratara de atacar activamente al jugador puesto que es una nave automática que solo se encuentra explorando pero tiene capacidades ofensivas.
+
+No contara con mucha defensa, teniendo la menor cantidad de vida entre todos los enemigos en general, comenzando con 0.8 de vida pudiendo ser derrotado de un solo golpe por ambos personajes.
+
+A continuación la tabla de atributos de la nave y sus balas.
+
+| Nivel | Vida | Velocidad | Color       | Puntaje |
+|:-----:|-----:|----------:|-------------|--------:|
+|   1   | 0.8  |  0.8 m/s  | Gris        |      25 |
+|   2   | 1.5  |  1.4 m/s  | Rojo        |      40 |
+|   3   | 3.0  |  2.2 m/s  | Negro       |      60 |
+
+: Atributos de enemigo Circular
+
+| Nivel | Tiempo | Velocidad |   Patron disparo                            |
+|:-----:|-------:|----------:|:-------------------------------------------:|
+|   1   |   2.0s |  2.5 m/s  | ![Circular 1](images/circular_bullet_1.png) |
+|   2   |   1.5s |    3 m/s  | ![Circular 2](images/circular_bullet_2.png) |
+|   3   |   1.0s |  4.5 m/s  | ![Circular 3](images/circular_bullet_3.png) |
+
+:Atributos de balas Circular
+
+
 
 ### Onda
 
@@ -267,11 +309,11 @@ Esta sección explica cada ambiente que el jugador podrá ver en el juego, las v
 
 <!--- Que enemigos se intrucen en que momento, cuando se pasa a un siguiente entorno, --->
 
-# Scoring
-
-# Flujo de Pantallas
+# Score
 
 # Interfases
+
+## Flujo de Pantallas
 
 
 # Arte
