@@ -243,7 +243,9 @@ Su patrón básico de disparo serán balas que se mueven en linea recta en una d
 
 ### Kamikaze
 <!-- BIO -->
-Tratara siempre de seguir al jugador, no podra disparar 
+El un enemigo que no podrá disparar, por ello siempre tratara de seguir al jugador y explotar con el. Para moverse buscara la posición actual del jugador y se moverá linealmente hacia el por un cierto tiempo, luego se detendrá si no llego a colisionar y buscara la nueva posición del jugador y repetirá este patrón.
+
+![Kamikaze](images/kamikaze.png)
 
 ### Circular
 
