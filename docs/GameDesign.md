@@ -213,7 +213,7 @@ Ademas para la recolección de los objetos como diamantes y powerups se contara 
 ## Enemigos
 Esta sección explica cada tipo de nave enviga que se presentara al jugador así como sus distintos comportamientos y las variaciones que cada uno presenta al incrementar la dificultad del juego a medida que avanza el tiempo.
 
-El juego cuenta con 6 tipo de enemigos básicos y cada uno de estos tiene variaciones que incrementan su dificultad. A su vez cada uno de ellos tendrá un patrón diferente de disparo y se podrán diferenciar visualmente. Los enemigos son nombrado a partir de sus patrones, estos son: Simple, Kamikaze, Circular, Onda, Lock-on y Jefe.
+El juego cuenta con 6 tipo de enemigos básicos y cada uno de estos tiene variaciones que incrementan su dificultad. A su vez cada uno de ellos tendrá un patrón diferente de disparo y se podrán diferenciar visualmente.
 
 Para dar un nivel de satisfacción al jugador, cada enemigo al ser destruido reproducirá una animación de destrucción y a la vez mostrar rápidamente un puntaje que el jugador obtiene por destruirlo, este numero variara según tipo de enemigo y su dificultad. Ademas cada uno tendrá una probabilidad de crear un diamante o powerup al ser destruido, en el detalle de cada uno se definirá que powerups podrán generar. El tipo de diamante generado varia solo por la dificultad de la nave enemiga, el detalle de cada diamante se vera mas adelante.
 
@@ -222,8 +222,9 @@ El nivel de dificultad de los enemigos es determinada por la cantidad de tiempo 
 <!--- Definir cada variacion posible (3 min excepto jefe) ... --->
 <!--Images de movimineto y de disparos-->
 
-### Simple
-<!-- BIO -->
+### Viking
+Los Vikings son las naves más básicas del imperio galáctico y las más abundantes debido a que su costo de producción es bajo y son aptas para la mayoría de misiones que pueden existir.
+
 Este enemigo tendrá un patrón de movimiento simple, tendrá un movimiento parabólico, desde donde inicie ira para abajo y al llegar a la parte baja de la pantalla por 10% regresara arriba tratando de ir al centro de la pantalla. Todas las versiones de este enemigo se moverán de la misma manera.
 
 Su patrón básico de disparo serán balas que se mueven en linea recta en una dirección, cada nivel se diferenciara visualemnte por el color de la nave las cuales tendrán un numero diferente de proyectiles y velocidad de viaje diferente. Al ser el primer enemigo su versión inicial tendrá solo 1 hit de vida y debera incrementar su defensa de tal forma que no pueda ser derrotado con un solo golpe en sus versiones posteriores. A continuación se muestran las variaciones a sus atributos como nave y de sus balas y como evoluciona en cada nivel:
@@ -246,13 +247,15 @@ Su patrón básico de disparo serán balas que se mueven en linea recta en una d
 
 :Atributos de balas Simple
 
-### Kamikaze
-<!-- BIO -->
+### Reaper
+Los Reapers son naves kamikaze, es decir que su único objetivo es encontrar a su víctima y explotar junto a ella. Solo son pilotados por prisioneros a los cuales se les ha implantado tecnología de control mental. Son bastante lentas, pero resistentes y al mínimo contacto con su enemigo esta explotará inmediatamente por lo que el jugador tendrá que deshacerse rápido de ellas.
+
 El un enemigo que no podrá disparar, por ello siempre tratara de seguir al jugador y explotar con el. Para moverse buscara la posición actual del jugador y se moverá linealmente hacia el por un cierto tiempo, luego se detendrá si no llego a colisionar y buscara la nueva posición del jugador y repetirá este patrón.
 
 ![Kamikaze](images/kamikaze.png)
 
-### Circular
+### Reaven
+Los Ravens estan equipados con cañones que apuntan en todas las direcciones, pues con ellos pueden deshacerse de cualquier enemigo que se presente a sus alrededores. Son usualmente usados en misiones de reconocimiento del imperio galáctico.
 
 Este enemigo tendrá una forma similar a la de una estrella, tendrá 4 puntos de disparo principales en apariencia y tendrá un patrón de disparo en el cual las balas formaran un circulo que se va expandiendo, todas la balas iniciaran con una dirección y se moverán rectamente.
 
@@ -280,11 +283,14 @@ A continuación la tabla de atributos de la nave y sus balas.
 
 
 
-### Onda
+### Phoenix
+Conocidos como las naves con mayor frecuencia de disparo en el arsenal del imperio galáctico, los Phoenix lanzan varios proyectiles que forman una onda sinusoidal. Debido a esta forma sus disparos tal vez no sean los más precisos, pero compensan por la velocidad a la cual disparan.
 
-### Lock-on
+### Banshee
+Un nuevo prototipo de nave del imperio, los Banshees, utilizan misiles teledirigidos. Han sido convocados para la persecusión de los fugitivos de Trantor, pero al parecer sus misiles no son los mejores, pues no pueden mantener la velocidad de una navede combate. Sus misiles se dirigen a la coordenada en la cual se encontraba el jugador hace un segundo, lo que permite que, siempre y cuando el jugador se mantenga en movimiento, la supervivencia del mismo.
 
-### Jefe
+### Battlecruiser (Jefe)
+Conocidos como Battlecruisers o Star Destroyers, estas inmensas naves solo son enviadas en situaciones desesperadas. Son extremadamente resistentes y cuentan con la frecuencia de disparo de los Phoenix. Estan equipados con tres cañon frontales que solo pueden ser usados uno a la vez y solamente cada diez segundos, pero cuando uno de ellos es disparado se genera un rayo de energía que cubre un tercio del campo de juego.
 
 ## _Powerups_
 Los powerups son objetos flotantes en la pantalla que aparecen al eliminar enemigos, cada uno de ellos tendrá un efecto diferente sobre el jugador si es que se logra coger.
