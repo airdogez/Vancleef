@@ -28,14 +28,19 @@ graphics: true
 Las autoridades del imperio galáctico de Trantor están tras de ti, por un crimen que no cometiste. Escoge entre VanCleef o Reol y usa sus diferentes naves y habilidades para poder derrotar a tus enemigos.
 
 ##Genero
+Shoot 'em up, Bullet hell y Rougelite, Top down shooter.
 
 ##Audiencia
+Jugadores de 15 a 23 años de edad que les guste los juegos de disparos, con estética retro y pixel art.
 
 ##Plataformas
+El juego debera correr en los sistemas operativos Windows, Mac OSX y Linux. Ademas sera disponible en plataformas moviles como Android y iOS. Finalmente debera correr en dispositivos SmartTV.
 
 ## Influencias
+El juego toma influencia de otros Bullet hells como Touhou, Shoot em ups clásicos como Tyrian, Gradius y toma elementos de juegos rougelite como Risk of Rain y Binding of Issac.
 
-## Descripcion del juego
+## Descripción del juego
+El juego es un _shoot 'em up_ retro con estética pixel art, el cual permitirá al jugador tener un solo intento de llegar al final, derrotando olas de enemigos cada vez mas difíciles hasta derrotar al jefe final. Si el jugador falla tendrá que volver a comenzar de cero, re compensándolo con un mejor puntaje cada vez.
 
 # Jugabilidad
 Esta sección explica la experiencia que el usuario tendrá al jugar y controlar a su personaje, que sentimientos se tratan de evocar en el jugador y explica las mecánicas que cada personaje presenta.
@@ -311,13 +316,12 @@ Esta sección explica cada ambiente que el jugador podrá ver en el juego, las v
 
 <!--- Que enemigos se intrucen en que momento, cuando se pasa a un siguiente entorno, --->
 
-# Score
+# Puntaje 
+<!-- Como debera funcionar el sistema de Puntaje -->
 
 # Interfases
 
 ## Flujo de Pantallas
 
-
 # Arte
-
 
