@@ -1,6 +1,6 @@
 ---
 title: "Vancleef: Game Design Document"
-revision: "Revisión 2"
+revision: "Revisión 0.3"
 author: 
   - "Andres Revolledo Galvez"
   - "Rodrigo Linares"
@@ -236,7 +236,7 @@ Su patrón básico de disparo serán balas que se mueven en linea recta en una d
 |   3   | 3.5  |  2.5 m/s  | Verde       |      70 |
 |   4   |   5  |  3.7 m/s  | Rojo oscuro |     100 |
 
-: Atributos de enemigo Simple
+: Atributos de Viking
 
 | Nivel | Tiempo | Velocidad |   Patron disparo                        |
 |:-----:|-------:|----------:|:---------------------------------------:|
@@ -245,17 +245,27 @@ Su patrón básico de disparo serán balas que se mueven en linea recta en una d
 |   3   |   1.0s |    5 m/s  | ![Simple 3](images/simple_bullet_2.png) |
 |   4   |   0.8s |    6 m/s  | ![Simple 4](images/simple_bullet_3.png) |
 
-:Atributos de balas Simple
+:Atributos de balas Viking
 
 ### Reaper
 Los Reapers son naves kamikaze, es decir que su único objetivo es encontrar a su víctima y explotar junto a ella. Solo son pilotados por prisioneros a los cuales se les ha implantado tecnología de control mental. Son bastante lentas, pero resistentes y al mínimo contacto con su enemigo esta explotará inmediatamente por lo que el jugador tendrá que deshacerse rápido de ellas.
 
-El un enemigo que no podrá disparar, por ello siempre tratara de seguir al jugador y explotar con el. Para moverse buscara la posición actual del jugador y se moverá linealmente hacia el por un cierto tiempo, luego se detendrá si no llego a colisionar y buscara la nueva posición del jugador y repetirá este patrón.
+Es un enemigo que no podrá disparar, por ello siempre tratara de seguir al jugador y explotar con el. Para moverse buscara la posición actual del jugador y se moverá linealmente hacia el por un cierto tiempo, luego se detendrá si no llego a colisionar y buscara la nueva posición del jugador, rotara hacia esa dirección y repetirá este patrón.
 
-![Kamikaze](images/kamikaze.png)
+A continuación la tabla de propiedades de la nave:
+
+| Nivel | Inc. rotación | Vel. movimiento | Color | Daño | Puntaje |
+|:-----:|--------------:|----------------:|-------|------|---------|
+|   1   |    5 grados   |         4 u/s   | Azul  |  3   |   500   |
+|   2   |   10 grados   |         6 u/s   | Verde |  5   |   750   |
+|   3   |   15 grados   |         8 u/s   | Rojo  |  8   |  1000   |
+
+: Atributos de Reaper
+
+![Reaper](images/kamikaze.png)
 
 ### Reaven
-Los Ravens estan equipados con cañones que apuntan en todas las direcciones, pues con ellos pueden deshacerse de cualquier enemigo que se presente a sus alrededores. Son usualmente usados en misiones de reconocimiento del imperio galáctico.
+Los Ravens están equipados con cañones que apuntan en todas las direcciones, pues con ellos pueden deshacerse de cualquier enemigo que se presente a sus alrededores. Son usualmente usados en misiones de reconocimiento del imperio galáctico.
 
 Este enemigo tendrá una forma similar a la de una estrella, tendrá 4 puntos de disparo principales en apariencia y tendrá un patrón de disparo en el cual las balas formaran un circulo que se va expandiendo, todas la balas iniciaran con una dirección y se moverán rectamente.
 
@@ -271,7 +281,7 @@ A continuación la tabla de atributos de la nave y sus balas.
 |   2   | 1.5  |  1.4 m/s  | Rojo        |      40 |
 |   3   | 3.0  |  2.2 m/s  | Negro       |      60 |
 
-: Atributos de enemigo Circular
+: Atributos de Reaven
 
 | Nivel | Tiempo | Velocidad |   Patron disparo                            |
 |:-----:|-------:|----------:|:-------------------------------------------:|
@@ -279,12 +289,33 @@ A continuación la tabla de atributos de la nave y sus balas.
 |   2   |   1.5s |    3 m/s  | ![Circular 2](images/circular_bullet_2.png) |
 |   3   |   1.0s |  4.5 m/s  | ![Circular 3](images/circular_bullet_3.png) |
 
-:Atributos de balas Circular
-
+:Atributos de balas de Reaven
 
 
 ### Phoenix
 Conocidos como las naves con mayor frecuencia de disparo en el arsenal del imperio galáctico, los Phoenix lanzan varios proyectiles que forman una onda sinusoidal. Debido a esta forma sus disparos tal vez no sean los más precisos, pero compensan por la velocidad a la cual disparan.
+
+Son naves que disparan gran cantidad de balas, su movimiento en pantalla es casi estacionario, se mantienen en una posición a una altura de 1/4 de la pantalla desde arriba y se motera oscilando de izquierda a derecha hasta ser destruido.
+
+Sus balas tendrán una ondulación, haciendo así que sus disparos abarquen una mayor área, pero no tendrá un gran poder de ataque, tendrán una apariencia de electricidad.
+
+Acá las propiedades de la nave en cada nivel:
+
+| Nivel | Vel. disparo | Vel. oscilacion | Color   |
+|:-----:|-------------:|----------------:|---------|
+|    1  |      4 u/s   |           1 u/s | Naranja |
+|    2  |      6 u/s   |           2 u/s | Rojo    |
+|    3  |     10 u/s   |           3 u/s | Negro   |
+
+: Atributos de Phoenix
+
+Aca las propiedades de las balas del phoenix:
+
+| Nivel | Vel. movimiento | Daño |
+|:-----:|----------------:|-----:|
+|   1   |           6 u/s |  0.5 |
+|   2   |           8 u/s |  1.0 |
+|   3   |          12 u/s |  1.5 |
 
 ### Banshee
 Un nuevo prototipo de nave del imperio, los Banshees, utilizan misiles teledirigidos. Han sido convocados para la persecusión de los fugitivos de Trantor, pero al parecer sus misiles no son los mejores, pues no pueden mantener la velocidad de una navede combate. Sus misiles se dirigen a la coordenada en la cual se encontraba el jugador hace un segundo, lo que permite que, siempre y cuando el jugador se mantenga en movimiento, la supervivencia del mismo.
@@ -315,7 +346,18 @@ Los powerups son objetos flotantes en la pantalla que aparecen al eliminar enemi
 : Incrementa en 1 la cantidad maxima de balas que puede usar el jugador a la vez, el total sera de 10 y cuando se obtenga desde este punto este powerup se obtendran 100 puntos.
 
 ## Diamantes
-Los diamantes darán puntos extra al jugador, estos deberán ser atrapados antes de que puedan otorgar el puntaje. De ser que salgan de la pantalla, estos se perderán.
+Los diamantes darán puntos extra al jugador, estos deberán ser atrapados antes de que puedan otorgar el puntaje. De ser que salgan de la pantalla, estos se perderán. Estos tendrán 4 niveles, cada nivel otorgara al jugador un puntaje diferente y serán diferenciados por su color.
+
+A continuación una tabla de cuanto puntaje dará que diamante y el color que lo representa:
+
+| Color  | Puntaje |
+|--------|--------:|
+| Rojo   |   100   |
+| Azul   |   250   |
+| Verde  |   400   |
+| Blanco |   500   |
+
+: Puntajes diamantes
 
 # Entorno
 Esta sección explica cada ambiente que el jugador podrá ver en el juego, las variaciones entre ellos, como su apariencia gráfica y sonora, como se generan las olas de enemigos y que patrones deberá de seguir en cada uno de ellos y el objetivo.
@@ -328,6 +370,12 @@ Esta sección explica cada ambiente que el jugador podrá ver en el juego, las v
 # Interfases
 
 ## Flujo de Pantallas
+Aca se muestra como sera el flujo de las pantallas del juego.
+
+![Flujo de pantallas](diagrams/FlujoPantallas.pdf)
+
+# Extra
+El juego contara con una pantalla de créditos que podrá ser accedida mediante un boton del menu principal.
 
 # Arte
 
