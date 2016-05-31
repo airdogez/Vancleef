@@ -221,7 +221,6 @@ El nivel de dificultad de los enemigos es determinada por la cantidad de tiempo 
 <!--- Definir los puntajes, patrones de balas, patrones de movimiento... --->
 <!--- Definir cada variacion posible (3 min excepto jefe) ... --->
 <!--Images de movimineto y de disparos-->
-
 ### Viking
 Los Vikings son las naves más básicas del imperio galáctico y las más abundantes debido a que su costo de producción es bajo y son aptas para la mayoría de misiones que pueden existir.
 
@@ -254,7 +253,7 @@ Es un enemigo que no podrá disparar, por ello siempre tratara de seguir al juga
 
 A continuación la tabla de propiedades de la nave:
 
-| Nivel | Inc. rotación | Vel. movimiento | Color | Daño | Puntaje |
+| Nivel | Inc. rotación | Vel. movimiento | Color | Vida | Puntaje |
 |:-----:|--------------:|----------------:|-------|------|---------|
 |   1   |    5 grados   |         4 u/s   | Azul  |  3   |   500   |
 |   2   |   10 grados   |         6 u/s   | Verde |  5   |   750   |
@@ -301,11 +300,11 @@ Sus balas tendrán una ondulación, haciendo así que sus disparos abarquen una 
 
 Acá las propiedades de la nave en cada nivel:
 
-| Nivel | Vel. disparo | Vel. oscilacion | Color   |
-|:-----:|-------------:|----------------:|---------|
-|    1  |      4 u/s   |           1 u/s | Naranja |
-|    2  |      6 u/s   |           2 u/s | Rojo    |
-|    3  |     10 u/s   |           3 u/s | Negro   |
+| Nivel | Vel. disparo | Vel. oscilacion | Color   | Vida |
+|:-----:|-------------:|----------------:|---------|-----:|
+|    1  |      4 u/s   |           1 u/s | Naranja |   1  |
+|    2  |      6 u/s   |           2 u/s | Rojo    |   3  |
+|    3  |     10 u/s   |           3 u/s | Negro   |  4.5 |
 
 : Atributos de Phoenix
 
@@ -318,10 +317,41 @@ Aca las propiedades de las balas del phoenix:
 |   3   |          12 u/s |  1.5 |
 
 ### Banshee
-Un nuevo prototipo de nave del imperio, los Banshees, utilizan misiles teledirigidos. Han sido convocados para la persecusión de los fugitivos de Trantor, pero al parecer sus misiles no son los mejores, pues no pueden mantener la velocidad de una navede combate. Sus misiles se dirigen a la coordenada en la cual se encontraba el jugador hace un segundo, lo que permite que, siempre y cuando el jugador se mantenga en movimiento, la supervivencia del mismo.
+Un nuevo prototipo de nave del imperio, los Banshees, utilizan misiles tele dirigidos. Han sido convocados para la persecución de los fugitivos de Trantor, pero al parecer sus misiles no son los mejores, pues no pueden mantener la velocidad de una nave de combate. Sus misiles se dirigen a la coordenada en la cual se encontraba el jugador hace un segundo, lo que permite que, siempre y cuando el jugador se mantenga en movimiento, la supervivencia del mismo.
+
+Una vez entran en pantalla se mantendrán en la parte superior de esta, y se moverán de extremo a extremo horizontalmente. Cada cierto tiempo localizaran la posición actual del jugador y en 1 segundo dispararan una gran cantidades de misiles a esa posición, estos serán algo lentos e irán a la posición indicada, y continuaran en esa dirección si no colisionan con el jugador, saliendo de pantalla.
+
+Sus misiles al tener masa, podrán ser destruidos con las balas del jugador, por ello tendrán vida.
+
+Ahora se presentan la tabla de atributos para la nave en cada nivel:
+
+| Nivel | Delay Disparo | # Misiles | Color  | Vida | Vel. Movimiento |
+|:-----:|--------------:|----------:|--------|:----:|----------------:|
+|   1   |      4 s      |      5    | Gris   |  3   |         2 u/s   |
+|   2   |      3 s      |     10    | Blanco |  5   |         3 u/s   |
+|   3   |      1 s      |     15    | Negro  |  8   |         4 u/s   |
+
+: Atributos Banshee
+
+Los atributos de sus misiles serán los siguientes para cada nivel:
+
+| Nivel | Vel. Movimiento | Vida   |
+|:-----:|-----------------|--------|
+|   1   |     1.0 u/s     |  0.8   |
+|   2   |     2.5 u/s     |  1.2   |
+|   3   |     4.0 u/s     |  2.0   |
+
+: Atributos de misiles de Banshee
+
 
 ### Battlecruiser (Jefe)
-Conocidos como Battlecruisers o Star Destroyers, estas inmensas naves solo son enviadas en situaciones desesperadas. Son extremadamente resistentes y cuentan con la frecuencia de disparo de los Phoenix. Estan equipados con tres cañon frontales que solo pueden ser usados uno a la vez y solamente cada diez segundos, pero cuando uno de ellos es disparado se genera un rayo de energía que cubre un tercio del campo de juego.
+Conocidos como Battlecruisers o Star Destroyers, estas inmensas naves solo son enviadas en situaciones desesperadas. Son extremadamente resistentes y cuentan con la frecuencia de disparo de los Phoenix. Están equipados con tres cañón frontales que solo pueden ser usados uno a la vez y solamente cada diez segundos, pero cuando uno de ellos es disparado se genera un rayo de energía que cubre un tercio del campo de juego.
+
+Es la nave final del juego y tendrá una gran cantidad de vida, solo tendrá un nivel y podrá utilizar varias formas de ataque.
+
+Su principal forma de ataque serán gran cantidad de balas que cubren gran área del nivel y cada cierto tiempo usara los cañones frontales que tiene. Esta compuesto de 3 partes, una por cada cañón, la ala derecha, izquierda y el cuerpo de la nave.
+
+Tendrá 500 puntos de vida, cada una de sus balas normales viajara a 3 u/s que cubrirán un patrón en abanico desde donde se disparo. Ademas podrá utilizar un cañón cada 10 segundos y luego este tendrá que enfriar, lo cual durara 20 segundos.
 
 ## _Powerups_
 Los powerups son objetos flotantes en la pantalla que aparecen al eliminar enemigos, cada uno de ellos tendrá un efecto diferente sobre el jugador si es que se logra coger.
@@ -370,12 +400,16 @@ Esta sección explica cada ambiente que el jugador podrá ver en el juego, las v
 # Interfases
 
 ## Flujo de Pantallas
-Aca se muestra como sera el flujo de las pantallas del juego.
+Acá se muestra como sera el flujo de las pantallas del juego.
 
 ![Flujo de pantallas](diagrams/FlujoPantallas.pdf)
 
+## Mockups de Pantallas
+A continuación
+
 # Extra
-El juego contara con una pantalla de créditos que podrá ser accedida mediante un boton del menu principal.
+El juego contara con una pantalla de créditos que podrá ser accedida mediante un botón del menú principal.
 
 # Arte
+Acá se anexara todo el arte conceptual del juego
 
