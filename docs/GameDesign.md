@@ -230,10 +230,10 @@ Su patrón básico de disparo serán balas que se mueven en linea recta en una d
 
 | Nivel | Vida | Velocidad | Color       | Puntaje |
 |:-----:|-----:|----------:|-------------|--------:|
-|   1   |   1  |    1 m/s  | Rojo        |      30 |
-|   2   | 2.5  |  1.5 m/s  | Azul        |      50 |
-|   3   | 3.5  |  2.5 m/s  | Verde       |      70 |
-|   4   |   5  |  3.7 m/s  | Rojo oscuro |     100 |
+|   1   |   1  |    1 m/s  | Rojo        |      50 |
+|   2   | 2.5  |  1.5 m/s  | Azul        |     100 |
+|   3   | 3.5  |  2.5 m/s  | Verde       |     150 |
+|   4   |   5  |  3.7 m/s  | Rojo oscuro |     200 |
 
 : Atributos de Viking
 
@@ -255,9 +255,9 @@ A continuación la tabla de propiedades de la nave:
 
 | Nivel | Inc. rotación | Vel. movimiento | Color | Vida | Puntaje |
 |:-----:|--------------:|----------------:|-------|------|---------|
-|   1   |    5 grados   |         4 u/s   | Azul  |  3   |   500   |
-|   2   |   10 grados   |         6 u/s   | Verde |  5   |   750   |
-|   3   |   15 grados   |         8 u/s   | Rojo  |  8   |  1000   |
+|   1   |    5 grados   |         4 u/s   | Azul  |  3   |   100   |
+|   2   |   10 grados   |         6 u/s   | Verde |  5   |   250   |
+|   3   |   15 grados   |         8 u/s   | Rojo  |  8   |   300   |
 
 : Atributos de Reaper
 
@@ -276,9 +276,9 @@ A continuación la tabla de atributos de la nave y sus balas.
 
 | Nivel | Vida | Velocidad | Color       | Puntaje |
 |:-----:|-----:|----------:|-------------|--------:|
-|   1   | 0.8  |  0.8 m/s  | Gris        |      25 |
-|   2   | 1.5  |  1.4 m/s  | Rojo        |      40 |
-|   3   | 3.0  |  2.2 m/s  | Negro       |      60 |
+|   1   | 0.8  |  0.8 m/s  | Gris        |     125 |
+|   2   | 1.5  |  1.4 m/s  | Rojo        |     240 |
+|   3   | 3.0  |  2.2 m/s  | Negro       |     360 |
 
 : Atributos de Reaven
 
@@ -300,11 +300,11 @@ Sus balas tendrán una ondulación, haciendo así que sus disparos abarquen una 
 
 Acá las propiedades de la nave en cada nivel:
 
-| Nivel | Vel. disparo | Vel. oscilacion | Color   | Vida |
-|:-----:|-------------:|----------------:|---------|-----:|
-|    1  |      4 u/s   |           1 u/s | Naranja |   1  |
-|    2  |      6 u/s   |           2 u/s | Rojo    |   3  |
-|    3  |     10 u/s   |           3 u/s | Negro   |  4.5 |
+| Nivel | Vel. disparo | Vel. oscilacion | Color   | Vida | Puntaje |
+|:-----:|-------------:|----------------:|---------|-----:|--------:|
+|    1  |      4 u/s   |           1 u/s | Naranja |   1  |     250 |
+|    2  |      6 u/s   |           2 u/s | Rojo    |   3  |     375 |
+|    3  |     10 u/s   |           3 u/s | Negro   |  4.5 |     450 |
 
 : Atributos de Phoenix
 
@@ -316,6 +316,8 @@ Aca las propiedades de las balas del phoenix:
 |   2   |           8 u/s |  1.0 |
 |   3   |          12 u/s |  1.5 |
 
+: Atributos de balas de Phoenix
+
 ### Banshee
 Un nuevo prototipo de nave del imperio, los Banshees, utilizan misiles tele dirigidos. Han sido convocados para la persecución de los fugitivos de Trantor, pero al parecer sus misiles no son los mejores, pues no pueden mantener la velocidad de una nave de combate. Sus misiles se dirigen a la coordenada en la cual se encontraba el jugador hace un segundo, lo que permite que, siempre y cuando el jugador se mantenga en movimiento, la supervivencia del mismo.
 
@@ -325,11 +327,11 @@ Sus misiles al tener masa, podrán ser destruidos con las balas del jugador, por
 
 Ahora se presentan la tabla de atributos para la nave en cada nivel:
 
-| Nivel | Delay Disparo | # Misiles | Color  | Vida | Vel. Movimiento |
-|:-----:|--------------:|----------:|--------|:----:|----------------:|
-|   1   |      4 s      |      5    | Gris   |  3   |         2 u/s   |
-|   2   |      3 s      |     10    | Blanco |  5   |         3 u/s   |
-|   3   |      1 s      |     15    | Negro  |  8   |         4 u/s   |
+| Nivel | Delay Disparo | # Misiles | Color  | Vida | Vel. Movimiento | Puntaje |
+|:-----:|--------------:|----------:|--------|:----:|----------------:|--------:|
+|   1   |      4 s      |      5    | Gris   |  3   |         2 u/s   |     300 |
+|   2   |      3 s      |     10    | Blanco |  5   |         3 u/s   |     500 |
+|   3   |      1 s      |     15    | Negro  |  8   |         4 u/s   |     700 |
 
 : Atributos Banshee
 
@@ -393,9 +395,21 @@ A continuación una tabla de cuanto puntaje dará que diamante y el color que lo
 Esta sección explica cada ambiente que el jugador podrá ver en el juego, las variaciones entre ellos, como su apariencia gráfica y sonora, como se generan las olas de enemigos y que patrones deberá de seguir en cada uno de ellos y el objetivo.
 
 <!--- Que enemigos se intrucen en que momento, cuando se pasa a un siguiente entorno, --->
+El juego consistirá de un solo nivel, el cual durara 10 minutos, cumplidos estos 10 minutos el juego introducirá al jefe final el cual debe ser derrotado para terminal el juego.
+
+El escenario del juego, el fondo y primer plano, consistirá de gráficos del espacio y planetas en el fondo con asteroides y estrellas en primer plano. 
+
+El juego introducirá a cada enemigo de forma gradual y cada 2.5 minutos incrementara la dificultad subiendo al siguiente nivel cada nave enemiga. La generación de cada ola de enemigos sera semi-aleatoria, con ciertas formaciones de naves pre fabricadas, pero cada vez que el jugador inicie un nuevo juego el orden de estas sera diferente. Finalmente al llegar al jefe se dejara de generar enemigos y el jugador solo tendrá que enfrentarse solo al jefe.
 
 # Puntaje 
 <!-- Como debera funcionar el sistema de Puntaje -->
+Eliminar naves enemigas otorgara el puntaje indicado en cada tabla de enemigos y de los misiles Banshee, realizar _graze_ otorgara 5 puntos extra por cada bala antes de que la barra de bomba este llena y 10 puntos extra por cada bala luego tener la barra de bomba llena.
+
+Cuando se use la habilidad de la bomba, se otorgara el puntaje de cada nave destruida y ademas 10 puntos extra por cada bala que exista en la pantalla.
+
+El juego no contara con ningún multiplicador de puntaje, todos los puntos obtenidos serán constantes. Ademas por ganar el juego se otorgaran 1.000.000 puntos extra.
+
+El puntaje final obtenido sera guardado en un archivo local y se mostraran los 10 mejores puntajes en la tabla de puntajes del menú principal junto a las iniciales del jugador. Para ello al finalizar el nivel por haber ganado o perdido se pedirá que el jugador ingrese sus iniciales
 
 # Interfases
 
@@ -405,7 +419,7 @@ Acá se muestra como sera el flujo de las pantallas del juego.
 ![Flujo de pantallas](diagrams/FlujoPantallas.pdf)
 
 ## Mockups de Pantallas
-A continuación
+A continuación se muestran los mockups de cada pantalla del juego:
 
 # Extra
 El juego contara con una pantalla de créditos que podrá ser accedida mediante un botón del menú principal.
