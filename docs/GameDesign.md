@@ -221,6 +221,7 @@ El nivel de dificultad de los enemigos es determinada por la cantidad de tiempo 
 <!--- Definir los puntajes, patrones de balas, patrones de movimiento... --->
 <!--- Definir cada variacion posible (3 min excepto jefe) ... --->
 <!--Images de movimineto y de disparos-->
+
 ### Viking
 Los Vikings son las naves más básicas del imperio galáctico y las más abundantes debido a que su costo de producción es bajo y son aptas para la mayoría de misiones que pueden existir.
 
