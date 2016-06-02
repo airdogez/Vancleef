@@ -4,7 +4,7 @@ revision: "Revisión 0.3"
 author: 
   - "Andres Revolledo Galvez"
   - "Rodrigo Linares"
-  - "Alvaro Barua"
+  - "Alvaro Barúa"
 institution: "Universidad Peruana de Ciencias Aplicadas"
 documentclass: article
 papersize: a4
@@ -412,7 +412,7 @@ El juego no contara con ningún multiplicador de puntaje, todos los puntos obten
 
 El puntaje final obtenido sera guardado en un archivo local y se mostraran los 10 mejores puntajes en la tabla de puntajes del menú principal junto a las iniciales del jugador. Para ello al finalizar el nivel por haber ganado o perdido se pedirá que el jugador ingrese sus iniciales
 
-# Interfases
+# Interfaces
 
 ## Flujo de Pantallas
 Acá se muestra como sera el flujo de las pantallas del juego.
@@ -421,6 +421,15 @@ Acá se muestra como sera el flujo de las pantallas del juego.
 
 ## Mockups de Pantallas
 A continuación se muestran los mockups de cada pantalla del juego:
+
+![Menú Principal](diagrams/MainMenu.pdf)
+![Opciones](diagrams/Opciones.pdf)
+![Tablero de puntajes](diagrams/ScoreBoard.pdf)
+![Selección de personajes](diagrams/CharacterSelection.pdf)
+![Modo de juego](diagrams/PlayMode.pdf)
+![Menú de pausa](diagrams/Pause.pdf)
+![Pantalla de derrota](diagrams/Defeat.pdf)
+![Pantalla de victoria](diagrams/Victory.pdf)
 
 # Extra
 El juego contara con una pantalla de créditos que podrá ser accedida mediante un botón del menú principal.
