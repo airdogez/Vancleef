@@ -423,7 +423,7 @@ Acá se muestra como sera el flujo de las pantallas del juego.
 A continuación se muestran los mockups de cada pantalla del juego:
 
 ![Menú Principal](diagrams/MainMenu.pdf)
-![Opciones](diagrams/Opciones.pdf)
+![Opciones](diagrams/Options.pdf)
 ![Tablero de puntajes](diagrams/ScoreBoard.pdf)
 ![Selección de personajes](diagrams/CharacterSelection.pdf)
 ![Modo de juego](diagrams/PlayMode.pdf)
