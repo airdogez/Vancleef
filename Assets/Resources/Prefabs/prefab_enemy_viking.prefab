@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &121342
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 430630}
-  m_Layer: 10
-  m_Name: ShootPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &123566
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 405608}
-  m_Layer: 10
-  m_Name: ShootPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &139634
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,42 +12,14 @@ GameObject:
   - 95: {fileID: 9586828}
   - 61: {fileID: 6114098}
   - 50: {fileID: 5010196}
-  - 114: {fileID: 11472818}
-  - 114: {fileID: 11452366}
+  - 114: {fileID: 11412838}
   m_Layer: 10
-  m_Name: prefab_enemy
+  m_Name: prefab_enemy_viking
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &180400
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 482536}
-  m_Layer: 10
-  m_Name: ShootPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &405608
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123566}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: -0.00000016292068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 421476}
-  m_RootOrder: 1
 --- !u!4 &421476
 Transform:
   m_ObjectHideFlags: 1
@@ -87,36 +29,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
-  m_Children:
-  - {fileID: 430630}
-  - {fileID: 405608}
-  - {fileID: 482536}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &430630
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 121342}
-  m_LocalRotation: {x: 0, y: 0, z: 0.9848078, w: 0.17364798}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 421476}
-  m_RootOrder: 0
---- !u!4 &482536
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180400}
-  m_LocalRotation: {x: 0, y: 0, z: 0.9848077, w: -0.1736483}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 421476}
-  m_RootOrder: 2
 --- !u!50 &5010196
 Rigidbody2D:
   serializedVersion: 2
@@ -165,7 +81,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11452366
+--- !u!114 &11412838
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -173,25 +89,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 139634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc2cea803e71a41579017b8c5e149036, type: 3}
+  m_Script: {fileID: 11500000, guid: 8819c5d84f9b973498cb8189e9ace4aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 4
-  _shootDelay: 1
+  currentLevel: {fileID: 0}
   _bullet: {fileID: 189326, guid: 82de7f2ea14404f038e3df0e9b5afc8d, type: 2}
---- !u!114 &11472818
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 139634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 445bbf8182f254689be2cd6c168c1565, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyBullet: {fileID: 11458556, guid: 82de7f2ea14404f038e3df0e9b5afc8d, type: 2}
-  speed: 2
+  levels:
+  - {fileID: 11400000, guid: 91df23b9806598245a8481aaf4c12128, type: 2}
+  - {fileID: 11400000, guid: 22e8066de7d13264b9df1060d924a2ea, type: 2}
+  - {fileID: 11400000, guid: e5c9b5119e844ed4d8cc5b4632dcac88, type: 2}
+  - {fileID: 11400000, guid: 5600a3285780c3247b986fa25d4ff35d, type: 2}
 --- !u!212 &21213256
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -5,10 +5,23 @@ using System.Collections;
 public class UIUpdate : MonoBehaviour {
 
     // Use this for initialization
-    public Text coinsText;
+    public Text puntajeText;
+    public Text timerText;
+    public Text bombText;
 
-    public void UpdateCoinText(int cant)
+    public void UpdateScoreText(int cant)
     {
-        coinsText.text = "Coins: " + cant.ToString();
+        puntajeText.text = "Puntaje: " + cant.ToString();
+    }
+
+    public void UpdateTimerText(float seconds)
+    {
+        System.TimeSpan t = System.TimeSpan.FromSeconds(seconds);
+        timerText.text = t.Minutes.ToString().PadLeft(2, '0') + ":" + t.Seconds.ToString().PadLeft(2, '0');
+    }
+
+    public void SetBombCant(int cant)
+    {
+        bombText.text = "Bombs: " + cant;
     }
 }

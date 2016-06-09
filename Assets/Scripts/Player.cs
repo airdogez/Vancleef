@@ -12,8 +12,7 @@ public class Player : MonoBehaviour
     public float _shootDelay;
 
     public Animator movement;
-
-    public static int coinCant = 0;
+    
     public int bombMax = 1;
     public int bombCant = 1;
 
@@ -91,34 +90,40 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Primary Fire"))
             StartCoroutine(Shoot());
         //Shoot Bomb
-        if(Input.GetButtonDown("Secondary Fire") && bombCant > 0)
-          ShootBomb();
+        if (Input.GetButtonDown("Secondary Fire") && bombCant > 0)
+            ShootBomb();
 
     }
 
     void ShootBomb()
     {
-      bombCant--;
-      Vector3 shootPosition = transform.position;
-      GameObject bomb = Util.LoadPFab("Prefabs/prefab_bomb");
-      bomb.transform.position = shootPosition;
-      GameObject goBulletLayer = GameObject.Find("Layer_Bullets");
-      bomb.transform.parent = goBulletLayer.transform;
+        bombCant--;
+        GameController.uiUpdate.SetBombCant(bombCant);
+        Vector3 shootPosition = transform.position;
+        GameObject bomb = Util.LoadPFab("Prefabs/prefab_bomb");
+        bomb.transform.position = shootPosition;
+        GameObject goBulletLayer = GameObject.Find("Layer_Bullets");
+        bomb.transform.parent = goBulletLayer.transform;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("EnemyBullet"))
+        if (collision.CompareTag("Coin"))
         {
-            Destroy(other.gameObject);
-            Destroy(gameObject);
-            Debug.Log("Player Killed");
+            GameController.Instance.AddPuntaje(1);
+            Destroy(collision.gameObject);
         }
-        else if (other.CompareTag("Coin"))
+    }
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("EnemyBullet"))
         {
-            coinCant++;
-            GameObject.Find("GOP_UI").GetComponent<UIUpdate>().UpdateCoinText(coinCant);
-            Destroy(other.gameObject);
+            if (Vector3.Distance(transform.position, collision.gameObject.transform.position) <= 0.04)
+            {
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 
