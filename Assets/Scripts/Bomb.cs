@@ -38,6 +38,7 @@ public class Bomb : MonoBehaviour {
 
   void Explode()
   {
+
     GameObject enemies = GameObject.Find("Layer_Enemies");
     for (int i = 0; i < enemies.transform.childCount; i++)
     {
