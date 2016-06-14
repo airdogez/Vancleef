@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 33a135c566bba44ada72d6abcdf6a9d6
-timeCreated: 1465405535
+timeCreated: 1465929725
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,6 +10,7 @@ TextureImporter:
     21300006: Bomb_3
     21300008: Bomb_4
     21300010: Bomb_5
+    21300012: Bomb_6
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -173,6 +174,25 @@ TextureImporter:
         - {x: 16, y: -16}
         - {x: 16, y: -1}
         - {x: 14, y: -1}
+    - name: Bomb_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 16}
+        - {x: -16, y: 14}
+        - {x: -16, y: -13}
+        - {x: -15, y: -16}
+        - {x: 15, y: -16}
+        - {x: 16, y: -14}
+        - {x: 16, y: 14}
+        - {x: 13, y: 16}
     outline: []
   spritePackingTag: 
   userData: 

@@ -4,8 +4,7 @@ using System.Collections;
 public class Bomb : MonoBehaviour {
 
   public float speed = 3;
-  public float timer = 1;
-  public Sprite spriteExplosion;
+  bool isExploding;
 
   void OnTriggerEnter2D(Collider2D other)
   {
@@ -16,6 +15,7 @@ public class Bomb : MonoBehaviour {
   // Use this for initialization
   void Start ()
   {
+    isExploding = true;
     //Move Up
     GetComponent<Rigidbody2D>().velocity = transform.up.normalized * speed;
   }
@@ -23,43 +23,24 @@ public class Bomb : MonoBehaviour {
   // Update is called once per frame
   void Update ()
   {
+
     //If it gets out of the screen Delete it
     Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1,1));
     if(transform.position.y > max.y)
       Destroy(gameObject);
-
-    //if timer reaches 0, explode
-    timer -= Time.deltaTime;
-    if( timer < 0)
-      Explode();
-
-    //GetComponent<CircleCollider2D>().radius += 0.05f;
   }
 
   void Explode()
   {
+    GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    Vector3 scale = this.transform.localScale;
+    scale.x *= 1.1f;
+    scale.y *= 1.1f;
+    this.transform.localScale = scale;
+  }
 
-    GameObject enemies = GameObject.Find("Layer_Enemies");
-    for (int i = 0; i < enemies.transform.childCount; i++)
-    {
-      Transform enemy = enemies.transform.GetChild(i);
-      Destroy(enemy.gameObject);
-    }
-
-    GameObject bullets = GameObject.Find("Layer_Bullets");
-    for (int i = 0; i < bullets.transform.childCount; i++)
-    {
-      Transform bullet = bullets.transform.GetChild(i);
-      Destroy(bullet.gameObject);
-    }
-
-    GameObject objects = GameObject.Find("Layer_Objects");
-    for (int i = 0; i < objects.transform.childCount; i++)
-    {
-      Transform obj = objects.transform.GetChild(i);
-      Destroy(obj.gameObject);
-    }
-
+  void endExplosion()
+  {
     Destroy(gameObject);
   }
 }

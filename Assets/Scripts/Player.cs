@@ -17,8 +17,8 @@ public class Player : MonoBehaviour
     public int bombMax = 1;
     public int bombCant = 1;
 
-    CircleCollider2D grazeCollider;
-    CircleCollider2D bulletCollider;
+    GameObject grazeCollider;
+    GameObject bulletCollider;
 
     void Start()
     {
