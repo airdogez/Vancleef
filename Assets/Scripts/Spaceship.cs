@@ -32,6 +32,7 @@ public class Spaceship : MonoBehaviour
         {
             GameController.Instance.AddPuntaje(currentLevel.puntaje);
             Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
 

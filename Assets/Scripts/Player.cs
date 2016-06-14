@@ -130,9 +130,10 @@ public class Player : MonoBehaviour
           Destroy(collision.gameObject);
           KillPlayer();
         }
-        graze++;
+        graze += 0.1f;
         if (graze > maxGraze){
           bombCant++;
+          if (bombCant > bombMax) bombCant = bombMax;
           graze = 0;
         }
         GameController.Instance.UpdateGrazeBar(graze/maxGraze);
@@ -144,16 +145,16 @@ public class Player : MonoBehaviour
     {
         while (Input.GetButton("Primary Fire"))
         {
-            yield return new WaitForSeconds(_shootDelay);
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                Transform shootPosition = transform.GetChild(i);
-                GameObject bullet = Util.LoadPFab("Prefabs/prefab_player_bullet");
-                bullet.transform.position = shootPosition.position;
-                bullet.transform.rotation = shootPosition.rotation;
-                GameObject goBulletLayer = GameObject.Find("Layer_Bullets");
-                bullet.transform.parent = goBulletLayer.transform;
-            }
+          for (int i = 0; i < transform.childCount; i++)
+          {
+            Transform shootPosition = transform.GetChild(i);
+            GameObject bullet = Util.LoadPFab("Prefabs/prefab_player_bullet");
+            bullet.transform.position = shootPosition.position;
+            bullet.transform.rotation = shootPosition.rotation;
+            GameObject goBulletLayer = GameObject.Find("Layer_Bullets");
+            bullet.transform.parent = goBulletLayer.transform;
+          }
+          yield return new WaitForSeconds(_shootDelay);
         }
     }
 

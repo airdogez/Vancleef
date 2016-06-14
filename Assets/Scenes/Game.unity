@@ -379,7 +379,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -80, y: -15}
+  m_AnchoredPosition: {x: -80, y: -20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &445005409
@@ -408,7 +408,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -449,8 +449,8 @@ Transform:
   m_Children:
   - {fileID: 688299412}
   - {fileID: 1763118273}
-  - {fileID: 1229459578}
   - {fileID: 1050066368}
+  - {fileID: 1229459578}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &558063985
@@ -463,7 +463,7 @@ GameObject:
   - 224: {fileID: 558063986}
   - 222: {fileID: 558063988}
   - 114: {fileID: 558063987}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: DeathScreenBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -779,7 +779,7 @@ Canvas:
   serializedVersion: 2
   m_RenderMode: 1
   m_Camera: {fileID: 688299416}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -944,7 +944,7 @@ Transform:
   - {fileID: 1799192147}
   - {fileID: 49736078}
   m_Father: {fileID: 482574394}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!114 &1050066369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,7 +1054,7 @@ Transform:
   - {fileID: 612203043}
   - {fileID: 2075371761}
   m_Father: {fileID: 482574394}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &1229459579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1160,7 +1160,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -15.5}
+  m_AnchoredPosition: {x: 80, y: -20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1365898980
@@ -1189,7 +1189,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1215,7 +1215,6 @@ GameObject:
   - 95: {fileID: 1371507673}
   - 114: {fileID: 1371507672}
   - 61: {fileID: 1371507670}
-  - 58: {fileID: 1371507671}
   m_Layer: 8
   m_Name: prefab_player
   m_TagString: Player
@@ -1235,23 +1234,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.015}
-  serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.36}
---- !u!58 &1371507671
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1371507669}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.05
+  m_Size: {x: 0.35, y: 0.4}
 --- !u!114 &1371507672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1266,7 +1251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 11487000, guid: e026a312b73873b42a8b007fc98799c1, type: 2}
   _speed: 5
-  _shootDelay: 0.1
+  _shootDelay: 0.75
   graze: 0
   maxGraze: 100
   movement: {fileID: 0}
@@ -1372,8 +1357,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 69.500015, y: 15}
-  m_SizeDelta: {x: 130, y: 20}
+  m_AnchoredPosition: {x: 100, y: 25}
+  m_SizeDelta: {x: 150, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1386752938
 MonoBehaviour:
@@ -1544,8 +1529,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 5, y: 15}
-  m_SizeDelta: {x: 130, y: 20}
+  m_AnchoredPosition: {x: 25, y: 25}
+  m_SizeDelta: {x: 150, y: 25}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1501131936
 MonoBehaviour:
@@ -1928,7 +1913,7 @@ Canvas:
   serializedVersion: 2
   m_RenderMode: 1
   m_Camera: {fileID: 688299416}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -2055,8 +2040,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 70, y: 15}
-  m_SizeDelta: {x: 130, y: 20}
+  m_AnchoredPosition: {x: 100, y: 25}
+  m_SizeDelta: {x: 150, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2056490759
 MonoBehaviour:
