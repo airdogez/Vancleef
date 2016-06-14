@@ -162,6 +162,9 @@ public class Player : MonoBehaviour
     {
       isDead = true;
       GetComponent<Player>().enabled = false;
+      GameObject explosion = Util.LoadPFab("Prefabs/prefab_explosion");
+      explosion.transform.position = this.transform.position;
+      explosion.transform.parent = this.transform.parent;
       Destroy(gameObject);
     }
 }

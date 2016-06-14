@@ -27,10 +27,12 @@ public class Spaceship : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.CompareTag("PlayerBullet"))
         {
             GameController.Instance.AddPuntaje(currentLevel.puntaje);
+            GameObject explosion = Util.LoadPFab("Prefabs/prefab_explosion");
+            explosion.transform.position = this.transform.position;
+            explosion.transform.parent = this.transform.parent;
             Destroy(gameObject);
             Destroy(other.gameObject);
         }
