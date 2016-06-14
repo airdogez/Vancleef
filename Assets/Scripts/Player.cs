@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
         //Movement
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        float mod = (Input.GetButton("Slow Down")) ? 3f : 10f;
+        float mod = (Input.GetButton("Slow Down")) ? 3f : 7f;
 
         if (x < 0)
         {

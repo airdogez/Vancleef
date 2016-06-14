@@ -10,6 +10,7 @@ TagManager:
   - PlayerBullet
   - Coin
   - PowerUp
+  - Bomb
   layers:
   - Default
   - TransparentFX
