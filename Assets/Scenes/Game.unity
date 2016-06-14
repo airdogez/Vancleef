@@ -525,48 +525,6 @@ CanvasRenderer:
 Transform:
   m_PrefabParentObject: {fileID: 490980, guid: f2fe1de93737e4759a513e232ad834a6, type: 2}
   m_PrefabInternal: {fileID: 1477571014}
---- !u!1001 &594320358
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 489076, guid: 63842289995b2e246803ed52bd6194d4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 200.54492
-      objectReference: {fileID: 0}
-    - target: {fileID: 489076, guid: 63842289995b2e246803ed52bd6194d4, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 15.078819
-      objectReference: {fileID: 0}
-    - target: {fileID: 489076, guid: 63842289995b2e246803ed52bd6194d4, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489076, guid: 63842289995b2e246803ed52bd6194d4, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489076, guid: 63842289995b2e246803ed52bd6194d4, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489076, guid: 63842289995b2e246803ed52bd6194d4, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489076, guid: 63842289995b2e246803ed52bd6194d4, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 489076, guid: 63842289995b2e246803ed52bd6194d4, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 63842289995b2e246803ed52bd6194d4, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &612203042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,6 +1216,8 @@ MonoBehaviour:
   bombMax: 1
   bombCant: 1
   isDead: 0
+  shootCant: 5
+  shootMax: 5
 --- !u!95 &1371507673
 Animator:
   serializedVersion: 3

@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public int bombMax = 1;
     public int bombCant = 1;
     public bool isDead;
+    public int shootCant = 5;
+    public int shootMax = 5;
 
     void Start()
     {
@@ -35,14 +37,7 @@ public class Player : MonoBehaviour
 
         movement = GetComponent<Animator>();
 
-
-        /* How to add a new bullet
-         *GameObject newShoot = new GameObject();
-         *Vector2 bullpos = transform.position;
-         *bullpos.y += 0.2f;
-         *newShoot.transform.position = bullpos;
-         *newShoot.transform.parent = this.transform;
-         */
+        StartCoroutine(RecoverBullets());
     }
 
     void Update()
@@ -89,8 +84,9 @@ public class Player : MonoBehaviour
         gameObject.transform.localPosition = pos;
 
         //Shoot Bullets
-        if (Input.GetButtonDown("Primary Fire"))
-            StartCoroutine(Shoot());
+        if (Input.GetButtonDown("Primary Fire")){
+          StartCoroutine(Shoot());
+        }
         //Shoot Bomb
         if (Input.GetButtonDown("Secondary Fire") && bombCant > 0)
             ShootBomb();
@@ -112,7 +108,7 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Coin"))
         {
-            GameController.Instance.AddPuntaje(1);
+            GameController.Instance.AddPuntaje(10);
             Destroy(collision.gameObject);
         }
     }
@@ -141,21 +137,30 @@ public class Player : MonoBehaviour
       }
     }
 
+    IEnumerator RecoverBullets()
+    {
+      while(true){
+        if(shootCant < shootMax)
+          shootCant++;
+        yield return new WaitForSeconds(.75f);
+      }
+    }
+
     IEnumerator Shoot()
     {
-        while (Input.GetButton("Primary Fire"))
+      while (shootCant > 0 && Input.GetButton("Primary Fire")){
+        for (int i = 0; i < transform.childCount; i++)
         {
-          for (int i = 0; i < transform.childCount; i++)
-          {
-            Transform shootPosition = transform.GetChild(i);
-            GameObject bullet = Util.LoadPFab("Prefabs/prefab_player_bullet");
-            bullet.transform.position = shootPosition.position;
-            bullet.transform.rotation = shootPosition.rotation;
-            GameObject goBulletLayer = GameObject.Find("Layer_Bullets");
-            bullet.transform.parent = goBulletLayer.transform;
-          }
-          yield return new WaitForSeconds(_shootDelay);
+          Transform shootPosition = transform.GetChild(i);
+          GameObject bullet = Util.LoadPFab("Prefabs/prefab_player_bullet");
+          bullet.transform.position = shootPosition.position;
+          bullet.transform.rotation = shootPosition.rotation;
+          GameObject goBulletLayer = GameObject.Find("Layer_Bullets");
+          bullet.transform.parent = goBulletLayer.transform;
+          shootCant--;
         }
+        yield return new WaitForSeconds(0.5f);
+      }
     }
 
     void KillPlayer()

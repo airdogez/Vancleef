@@ -1,15 +1,17 @@
 fileFormatVersion: 2
 guid: b7c841ec1e8772c428beffe0b5f4e7e4
-timeCreated: 1462346267
+timeCreated: 1465943124
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Bullet_0
     21300002: Bullet_1
+    21300004: Bullet_2
+    21300006: Bullet_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -55,9 +57,9 @@ TextureImporter:
     - name: Bullet_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 5
         y: 0
-        width: 16
+        width: 6
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -66,10 +68,32 @@ TextureImporter:
     - name: Bullet_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 17
+        y: 1
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Bullet_2
+      rect:
+        serializedVersion: 2
+        x: 36
         y: 0
-        width: 16
+        width: 8
         height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Bullet_3
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 5
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
