@@ -27,10 +27,6 @@ public class Spaceship : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("EnemyBullet") && !other.CompareTag("Bomb"))
-        {
-            Destroy(other.gameObject);
-        }
 
         if (other.CompareTag("PlayerBullet"))
         {

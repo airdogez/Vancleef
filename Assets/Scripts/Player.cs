@@ -127,7 +127,7 @@ public class Player : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("EnemyBullet"))
+        if (collision.CompareTag("EnemyBullet") || collision.CompareTag("Enemy"))
         {
             if (Vector3.Distance(transform.position, collision.gameObject.transform.position) <= 0.2)
             {
