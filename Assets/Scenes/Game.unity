@@ -169,7 +169,7 @@ GameObject:
   - 4: {fileID: 49736078}
   - 114: {fileID: 49736080}
   - 114: {fileID: 49736079}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,9 +448,9 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 688299412}
-  - {fileID: 1050066368}
   - {fileID: 1763118273}
   - {fileID: 1229459578}
+  - {fileID: 1050066368}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &558063985
@@ -463,7 +463,7 @@ GameObject:
   - 224: {fileID: 558063986}
   - 222: {fileID: 558063988}
   - 114: {fileID: 558063987}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: DeathScreenBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,15 +500,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.42647058, g: 0.42647058, b: 0.42647058, a: 1}
+  m_Color: {r: 0.50735295, g: 0, b: 0.36739343, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -872,8 +872,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45, y: 14.999998}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0.0000015497208, y: 14.999998}
+  m_SizeDelta: {x: 250, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1000962392
 MonoBehaviour:
@@ -923,7 +923,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1050066368}
   - 114: {fileID: 1050066369}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GOP_UI_Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,7 +944,7 @@ Transform:
   - {fileID: 1799192147}
   - {fileID: 49736078}
   m_Father: {fileID: 482574394}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!114 &1050066369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,6 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puntajeText: {fileID: 1000962392}
+  restartButton: {fileID: 1641756951}
 --- !u!1001 &1137559040
 Prefab:
   m_ObjectHideFlags: 0
@@ -1053,7 +1054,7 @@ Transform:
   - {fileID: 612203043}
   - {fileID: 2075371761}
   m_Father: {fileID: 482574394}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!114 &1229459579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1266,6 +1267,8 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 11487000, guid: e026a312b73873b42a8b007fc98799c1, type: 2}
   _speed: 5
   _shootDelay: 0.1
+  graze: 0
+  maxGraze: 100
   movement: {fileID: 0}
   bombMax: 1
   bombCant: 1
@@ -1534,7 +1537,7 @@ RectTransform:
   m_GameObject: {fileID: 1501131934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 911458321}
@@ -1588,6 +1591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f643d41ed4549969db59e75e79c2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transform: {fileID: 1501131935}
 --- !u!4 &1529939418 stripped
 Transform:
   m_PrefabParentObject: {fileID: 490980, guid: f2fe1de93737e4759a513e232ad834a6, type: 2}
@@ -1667,7 +1671,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1641756952}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1050066369}
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1641756952
@@ -1811,7 +1826,7 @@ Transform:
   - {fileID: 911458321}
   - {fileID: 1271801206}
   m_Father: {fileID: 482574394}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &1763118274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1826,6 +1841,7 @@ MonoBehaviour:
   puntajeText: {fileID: 1365898980}
   timerText: {fileID: 445005409}
   bombText: {fileID: 1714125636}
+  grazeBar: {fileID: 1501131938}
 --- !u!1 &1799192146
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,20 +6,15 @@ public class Player : MonoBehaviour
 
     private Vector3 leftBottom;
     private Vector3 rightTop;
-    private float graze;
 
     public PlayerBullet _bulletPrefab;
     public float _speed;
     public float _shootDelay;
-
+    public float graze = 0;
+    public float maxGraze = 100;
     public Animator movement;
-    
     public int bombMax = 1;
     public int bombCant = 1;
-
-    GameObject grazeCollider;
-    GameObject bulletCollider;
-
     public bool isDead;
 
     void Start()
@@ -40,6 +35,7 @@ public class Player : MonoBehaviour
 
         movement = GetComponent<Animator>();
 
+
         /* How to add a new bullet
          *GameObject newShoot = new GameObject();
          *Vector2 bullpos = transform.position;
@@ -47,9 +43,6 @@ public class Player : MonoBehaviour
          *newShoot.transform.position = bullpos;
          *newShoot.transform.parent = this.transform;
          */
-
-        bulletCollider = GameObject.Find("BulletCollider");
-        grazeCollider = GameObject.Find("GrazeCollider");
     }
 
     void Update()
@@ -127,14 +120,24 @@ public class Player : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("EnemyBullet") || collision.CompareTag("Enemy"))
+      if(collision.CompareTag("Enemy"))
+        KillPlayer();
+
+      if (collision.CompareTag("EnemyBullet"))
+      {
+        if (Vector3.Distance(transform.position, collision.gameObject.transform.position) <= 0.2)
         {
-            if (Vector3.Distance(transform.position, collision.gameObject.transform.position) <= 0.2)
-            {
-                Destroy(collision.gameObject);
-                KillPlayer();
-            }
+          Destroy(collision.gameObject);
+          KillPlayer();
         }
+        graze++;
+        if (graze > maxGraze){
+          bombCant++;
+          graze = 0;
+        }
+        GameController.Instance.UpdateGrazeBar(graze/maxGraze);
+        GameController.Instance.UpdateBombs(bombCant);
+      }
     }
 
     IEnumerator Shoot()

@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
         if (enemiesLevel < 3)
         {
             float segmentTime = Time.time - startTimeSegments;
-            if (segmentTime >= 15)
+            if (segmentTime >= 150)
             {
                 enemiesLevel++;
                 startTimeSegments = Time.time;
@@ -75,6 +75,16 @@ public class GameController : MonoBehaviour
     {
         puntaje += p;
         uiUpdate.UpdateScoreText(puntaje);
+    }
+
+    public void UpdateGrazeBar(float scale)
+    {
+      uiUpdate.UpdateGrazeBar(scale);
+    }
+
+    public void UpdateBombs(int bombs)
+    {
+      uiUpdate.SetBombCant(bombs);
     }
 
     public void enableDeathScreen()

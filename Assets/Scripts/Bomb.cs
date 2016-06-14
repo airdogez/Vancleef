@@ -7,8 +7,13 @@ public class Bomb : MonoBehaviour {
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    if(!other.CompareTag("Player"))
+    if(!other.CompareTag("Player")){
+      if(other.CompareTag("Enemy")){
+        Spaceship enemy = (Spaceship) other.gameObject.GetComponent<Spaceship>();
+        GameController.Instance.AddPuntaje(enemy.currentLevel.puntaje);
+      }
       Destroy(other.gameObject);
+    }
   }
 
   // Use this for initialization
@@ -24,7 +29,7 @@ public class Bomb : MonoBehaviour {
     //If it gets out of the screen Delete it
     Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1,1));
     //if(transform.position.y > max.y)
-      //Destroy(gameObject);
+    //Destroy(gameObject);
   }
 
   void Explode()

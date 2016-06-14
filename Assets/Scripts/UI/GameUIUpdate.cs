@@ -8,6 +8,7 @@ public class GameUIUpdate : MonoBehaviour {
     public Text puntajeText;
     public Text timerText;
     public Text bombText;
+    public GrazeBar grazeBar;
 
     public void UpdateScoreText(int cant)
     {
@@ -23,5 +24,10 @@ public class GameUIUpdate : MonoBehaviour {
     public void SetBombCant(int cant)
     {
         bombText.text = "Bombs: " + cant;
+    }
+
+    public void UpdateGrazeBar(float scale)
+    {
+      grazeBar.setBarScale(scale);
     }
 }
