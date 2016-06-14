@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 
     private Vector3 leftBottom;
     private Vector3 rightTop;
+    private float graze;
 
     public PlayerBullet _bulletPrefab;
     public float _speed;
@@ -15,6 +16,9 @@ public class Player : MonoBehaviour
     
     public int bombMax = 1;
     public int bombCant = 1;
+
+    CircleCollider2D grazeCollider;
+    CircleCollider2D bulletCollider;
 
     void Start()
     {
@@ -41,6 +45,8 @@ public class Player : MonoBehaviour
          *newShoot.transform.parent = this.transform;
          */
 
+        bulletCollider = GameObject.Find("BulletCollider");
+        grazeCollider = GameObject.Find("GrazeCollider");
     }
 
     void Update()
@@ -114,6 +120,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
 
     public void OnTriggerStay2D(Collider2D collision)
     {
