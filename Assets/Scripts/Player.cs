@@ -20,8 +20,11 @@ public class Player : MonoBehaviour
     GameObject grazeCollider;
     GameObject bulletCollider;
 
+    public bool isDead;
+
     void Start()
     {
+        isDead = false;
         //Set initial position of player 
         leftBottom = Vector3.zero;
         rightTop = Vector3.zero;
@@ -129,7 +132,7 @@ public class Player : MonoBehaviour
             if (Vector3.Distance(transform.position, collision.gameObject.transform.position) <= 0.2)
             {
                 Destroy(collision.gameObject);
-                Destroy(gameObject);
+                KillPlayer();
             }
         }
     }
@@ -149,5 +152,12 @@ public class Player : MonoBehaviour
                 bullet.transform.parent = goBulletLayer.transform;
             }
         }
+    }
+
+    void KillPlayer()
+    {
+      isDead = true;
+      GetComponent<Player>().enabled = false;
+      Destroy(gameObject);
     }
 }

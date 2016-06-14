@@ -4,13 +4,15 @@ using System.Collections;
 public class GameController : MonoBehaviour
 {
     public static GameController Instance;
-    public static UIUpdate uiUpdate;
+    public static GameUIUpdate uiUpdate;
+    public static DeathUIUpdate deathScreen;
     private float startTime = 0;
     private float startTimeSegments = 0;
     private Vector3 leftBottom;
     private Vector3 rightTop;
     private BulletFactory mBulletFactory;
     private GameObject mGoEnemyLayer;
+    private Player mGoPlayer;
     private int enemiesLevel = 0;
     private int puntaje = 0;
 
@@ -25,14 +27,15 @@ public class GameController : MonoBehaviour
     void Start()
     {
         startTime = startTimeSegments = Time.time;
-        uiUpdate = GameObject.Find("GOP_UI").GetComponent<UIUpdate>();
+        uiUpdate = GameObject.Find("GOP_UI").GetComponent<GameUIUpdate>();
         mBulletFactory = new BulletFactory();
         //Give reference of gamecontroller to player
-        GameObject.Find("prefab_player").GetComponent<Player>();
-
+        mGoPlayer = GameObject.Find("prefab_player").GetComponent<Player>();
         mGoEnemyLayer = GameObject.Find("Layer_Enemies");
         Util.ComputeResponsiveScreenPoints(Camera.main, out leftBottom, out rightTop);
         StartCoroutine(SpawnEnemy());
+        deathScreen = GameObject.Find("GOP_UI_Death").GetComponent<DeathUIUpdate>();
+        deathScreen.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -49,6 +52,9 @@ public class GameController : MonoBehaviour
                 enemiesLevel++;
                 startTimeSegments = Time.time;
             }
+        }
+        if(mGoPlayer.isDead){
+            enableDeathScreen();
         }
     }
 
@@ -69,5 +75,12 @@ public class GameController : MonoBehaviour
     {
         puntaje += p;
         uiUpdate.UpdateScoreText(puntaje);
+    }
+
+    public void enableDeathScreen()
+    {
+      deathScreen.gameObject.SetActive(true);
+      deathScreen.UpdateScoreText(puntaje);
+      uiUpdate.gameObject.SetActive(false);
     }
 }

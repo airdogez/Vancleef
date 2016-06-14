@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class UIUpdate : MonoBehaviour {
+public class GameUIUpdate : MonoBehaviour {
 
     // Use this for initialization
     public Text puntajeText;
