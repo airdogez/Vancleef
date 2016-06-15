@@ -87,6 +87,12 @@ public class GameController : MonoBehaviour
       uiUpdate.SetBombCant(bombs);
     }
 
+    public void UpdateBullets(int bullets)
+    {
+      uiUpdate.SetBulletCant(bullets);
+    }
+
+
     public void enableDeathScreen()
     {
       deathScreen.gameObject.SetActive(true);

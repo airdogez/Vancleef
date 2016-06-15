@@ -142,6 +142,7 @@ public class Player : MonoBehaviour
       while(true){
         if(shootCant < shootMax)
           shootCant++;
+        GameController.Instance.UpdateBullets(shootCant);
         yield return new WaitForSeconds(.75f);
       }
     }
@@ -158,6 +159,7 @@ public class Player : MonoBehaviour
           GameObject goBulletLayer = GameObject.Find("Layer_Bullets");
           bullet.transform.parent = goBulletLayer.transform;
           shootCant--;
+          GameController.Instance.UpdateBullets(shootCant);
         }
         yield return new WaitForSeconds(0.5f);
       }
