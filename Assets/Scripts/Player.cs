@@ -108,7 +108,8 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Coin"))
         {
-            GameController.Instance.AddPuntaje(10);
+            GameObject diamond = (GameObject)collision.gameObject;
+            GameController.Instance.AddPuntaje(diamond.GetComponent<Coin>().score);
             Destroy(collision.gameObject);
         }
     }

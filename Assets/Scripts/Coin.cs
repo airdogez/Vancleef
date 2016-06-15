@@ -4,11 +4,14 @@ using System.Collections;
 public class Coin : MonoBehaviour {
 
   private float speed;
+  public int score;
 
   // Use this for initialization
   void Start () {
     speed = 50f;
+  }
 
+  public void NextSprite(){
   }
 
   // Update is called once per frame
