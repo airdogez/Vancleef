@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     private Vector3 leftBottom;
     private Vector3 rightTop;
 
-    public PlayerBullet _bulletPrefab;
+    public GameObject _bulletPrefab;
     public float _speed;
     public float _shootDelay;
     public float graze = 0;
@@ -154,14 +154,14 @@ public class Player : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
           Transform shootPosition = transform.GetChild(i);
-          GameObject bullet = Util.LoadPFab("Prefabs/prefab_player_bullet");
+          GameObject bullet = (GameObject) Instantiate(_bulletPrefab);
           bullet.transform.position = shootPosition.position;
           bullet.transform.rotation = shootPosition.rotation;
           GameObject goBulletLayer = GameObject.Find("Layer_Bullets");
           bullet.transform.parent = goBulletLayer.transform;
+        }
           shootCant--;
           GameController.Instance.UpdateBullets(shootCant);
-        }
         yield return new WaitForSeconds(0.5f);
       }
     }
