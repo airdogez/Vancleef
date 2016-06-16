@@ -180,16 +180,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 149558, guid: 97b31a5294cbd49c5ae5dc0ebdd07753, type: 2}
-  _speed: 5
-  _shootDelay: 0.75
+  _speed: 3
+  _shootDelay: 0.5
   graze: 0
   maxGraze: 100
   movement: {fileID: 0}
   bombMax: 1
   bombCant: 1
   isDead: 0
-  shootCant: 5
-  shootMax: 5
+  shootCant: 3
+  shootMax: 3
 --- !u!212 &21297546
 SpriteRenderer:
   m_ObjectHideFlags: 1

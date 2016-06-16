@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
 
       if (collision.CompareTag("EnemyBullet"))
       {
-        if (Vector3.Distance(transform.position, collision.gameObject.transform.position) <= 0.2)
+        if (Vector3.Distance(transform.position, collision.gameObject.transform.position) <= 0.15)
         {
           Destroy(collision.gameObject);
           KillPlayer();
