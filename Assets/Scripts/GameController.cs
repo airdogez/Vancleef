@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
   private Vector3 rightTop;
   private BulletFactory mBulletFactory;
   private GameObject mGoEnemyLayer;
+  private GameObject mCoinFactory;
   private Player mGoPlayer;
   private int enemiesLevel = 0;
   private int puntaje = 0;
@@ -76,7 +77,7 @@ public class GameController : MonoBehaviour
       if (enemiesLevel < 3)
       {
         float segmentTime = Time.time - startTimeSegments;
-        if (segmentTime >= 150)
+        if (segmentTime >= 15)
         {
           enemiesLevel++;
           startTimeSegments = Time.time;

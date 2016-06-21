@@ -4,20 +4,28 @@ using System.Collections;
 public class CoinFactory : MonoBehaviour {
 
   public GameObject coinPrefab;
+  public int level = 0;
   private Transform objectLayer;
   private float vertExtent;
   private float horzExtent;
+  private float startTimeSegments = 0;
+  public Sprite[] sprites;
 
   void Start () {
     objectLayer = GameObject.Find("Layer_Objects").transform;
     vertExtent = Camera.main.orthographicSize;
     horzExtent = vertExtent * Screen.width / Screen.height;
+    level = 0;
     StartCoroutine(SpawnCoins());
   }
 
   // Update is called once per frame
   void Update () {
-
+    float segmentTime = Time.time - startTimeSegments;
+    if (segmentTime >= 15){
+      level++;
+      startTimeSegments = Time.time;
+    }
   }
 
   IEnumerator SpawnCoins()
@@ -25,6 +33,8 @@ public class CoinFactory : MonoBehaviour {
     yield return new WaitForSeconds(Random.Range(1f, 3f));
     GameObject coin = (GameObject)Instantiate(coinPrefab, new Vector3(Random.Range(-horzExtent + 2, horzExtent - 2), vertExtent + 1), Quaternion.identity);
     coin.transform.parent = objectLayer;
+    coin.GetComponent<Coin>().setSprite(sprites[level]);
+    coin.GetComponent<Coin>().setScore((level+1)*10);
     StartCoroutine(SpawnCoins());
   }
 }
