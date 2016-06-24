@@ -89,7 +89,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.Company.ProductName
+  bundleIdentifier: com.vancleef.algo
   bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
@@ -455,7 +455,7 @@ PlayerSettings:
   WebGL::emscriptenArgs: 
   WebGL::template: APPLICATION:Default
   additionalIl2CppArgs::additionalIl2CppArgs: 
-  cloudProjectId: 5b3ce214-36dd-48ca-bc5e-a37c232fae69
-  projectName: Vancleef
-  organizationId: andres-revolledo
+  cloudProjectId: 
+  projectName: 
+  organizationId: 
   cloudEnabled: 0

@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
 
     private Vector3 leftBottom;
     private Vector3 rightTop;
+    private float x;
+    private float y;
+    private float mod;
 
     public GameObject _bulletPrefab;
     public float _speed;
@@ -43,9 +46,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         //Movement
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-        float mod = (Input.GetButton("Slow Down")) ? 3f : 7f;
+#if !UNITY_ANDROID
+        x = Input.GetAxis("Horizontal");
+        y = Input.GetAxis("Vertical");
+        mod = (Input.GetButton("Slow Down")) ? 3f : 7f;
+#endif
 
         if (x < 0)
         {
