@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
         {
             GameObject diamond = (GameObject)collision.gameObject;
             GameController.Instance.AddPuntaje(diamond.GetComponent<Coin>().score);
+            GameObject.Find("CoinSound").GetComponent<AudioSource>().Play();
             Destroy(collision.gameObject);
         }
     }
@@ -160,6 +161,7 @@ public class Player : MonoBehaviour
           GameObject goBulletLayer = GameObject.Find("Layer_Bullets");
           bullet.transform.parent = goBulletLayer.transform;
         }
+        GameObject.Find("Shoot").GetComponent<AudioSource>().Play();
           shootCant--;
           GameController.Instance.UpdateBullets(shootCant);
         yield return new WaitForSeconds(0.5f);
