@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 0
   velocidad: 0
-  sprite: {fileID: 21300008, guid: 406a3564c2a00f044a64f525895fc32c, type: 3}
+  sprite: {fileID: 0}
   puntaje: 0
   shootingFreq: 0
   bulletSpeed: 0

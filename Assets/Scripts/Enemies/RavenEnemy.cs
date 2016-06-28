@@ -1,21 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class VikingEnemy : Spaceship {
-
-    private float x = 0;
-
+public class RavenEnemy : Spaceship {
+    
     public override void Start()
     {
+        LevelUp(0);
         StartCoroutine(Shoot());
     }
 
     public override void Update()
     {
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
-        x += 0.15f;
-        Vector2 sine = new Vector2(Mathf.Sin(x), -1f);
-        Move(sine);
+        Move(Vector2.down * currentLevel.velocidad);
         if (transform.position.y < min.y)
             Destroy(gameObject);
     }
