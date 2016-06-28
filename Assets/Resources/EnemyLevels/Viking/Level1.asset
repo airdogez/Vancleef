@@ -8,14 +8,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38b3506a06524504faf335447a8112a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ae8cfbc0cf98414e84ef6d508bff44f, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  vida: 1
-  velocidad: 1
-  color: {r: 1, g: 0, b: 0, a: 1}
-  puntaje: 50
-  shootingFreq: 1.5
-  bulletSpeed: 3
-  bulletSpawnPoints:
-  - {x: 0, y: 0, z: -180}
+  vida: 0
+  velocidad: 0
+  sprite: {fileID: 21300008, guid: 406a3564c2a00f044a64f525895fc32c, type: 3}
+  puntaje: 0
+  shootingFreq: 0
+  bulletSpeed: 0
+  bulletSpawnPoints: []

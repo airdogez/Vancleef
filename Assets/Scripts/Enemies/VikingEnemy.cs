@@ -23,7 +23,7 @@ public class VikingEnemy : Spaceship {
     public override void LevelUp(int level)
     {
         currentLevel = levels[level];
-        GetComponent<SpriteRenderer>().color = currentLevel.color;
+        GetComponent<SpriteRenderer>().sprite = currentLevel.sprite;
     }
 
     IEnumerator Shoot()

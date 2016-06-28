@@ -23,7 +23,7 @@ public class CoinFactory : MonoBehaviour {
   void Update () {
     float segmentTime = Time.time - startTimeSegments;
     if (segmentTime >= 15){
-      level++;
+      level++; //limitar o arreglar
       startTimeSegments = Time.time;
     }
   }
@@ -33,7 +33,7 @@ public class CoinFactory : MonoBehaviour {
     yield return new WaitForSeconds(Random.Range(1f, 3f));
     GameObject coin = (GameObject)Instantiate(coinPrefab, new Vector3(Random.Range(-horzExtent + 2, horzExtent - 2), vertExtent + 1), Quaternion.identity);
     coin.transform.parent = objectLayer;
-    coin.GetComponent<Coin>().setSprite(sprites[level]);
+    coin.GetComponent<Coin>().setSprite(sprites[level]); //OOR exception en la variable level (max index value de 4)
     coin.GetComponent<Coin>().setScore((level+1)*10);
     StartCoroutine(SpawnCoins());
   }

@@ -36,7 +36,8 @@ public class GameController : MonoBehaviour
     player.SetActive(true);
     mGoPlayer = player.GetComponent<Player>();
     StartCoroutine(SpawnEnemy());
-    selectionScreen.active = false;
+    StartCoroutine(SpawnAsteroid());
+        selectionScreen.active = false;
     uiUpdate.gameObject.SetActive(true);
     GameObject.Find("SoundManager").GetComponent<SoundManager>().playSound("bgm");
   }
@@ -49,7 +50,8 @@ public class GameController : MonoBehaviour
     player.SetActive(true);
     mGoPlayer = player.GetComponent<Player>();
     StartCoroutine(SpawnEnemy());
-    selectionScreen.active = false;
+    StartCoroutine(SpawnAsteroid());
+        selectionScreen.active = false;
     uiUpdate.gameObject.SetActive(true);
     GameObject.Find("SoundManager").GetComponent<SoundManager>().playSound("bgm");
   }
@@ -104,7 +106,19 @@ public class GameController : MonoBehaviour
     }
   }
 
-  public void AddPuntaje(int p)
+    IEnumerator SpawnAsteroid()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(1.5f, 2.5f * 10));
+            float randomX = Random.Range(leftBottom.x + 0.3f, rightTop.x - 0.3f);
+            GameObject enemy = Util.LoadPFab("Prefabs/Asteroid");
+            enemy.transform.position = new Vector3(randomX, rightTop.y, 0);
+            enemy.transform.parent = mGoEnemyLayer.transform;
+        }
+    }
+
+    public void AddPuntaje(int p)
   {
     puntaje += p;
     uiUpdate.UpdateScoreText(puntaje);
