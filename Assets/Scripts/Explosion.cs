@@ -3,7 +3,7 @@
 public class Explosion : MonoBehaviour {
 
   void playAudio(){
-    GameObject.Find("Explosion").GetComponent<AudioSource>().Play();
+    GameObject.Find("SoundManager").GetComponent<SoundManager>().playSound("explosion");
   }
 
   void OnAnimationFinish(){

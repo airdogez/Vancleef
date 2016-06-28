@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
     StartCoroutine(SpawnEnemy());
     selectionScreen.active = false;
     uiUpdate.gameObject.SetActive(true);
+    GameObject.Find("SoundManager").GetComponent<SoundManager>().playSound("bgm");
   }
 
   public void StartGameReol(){
@@ -50,6 +51,7 @@ public class GameController : MonoBehaviour
     StartCoroutine(SpawnEnemy());
     selectionScreen.active = false;
     uiUpdate.gameObject.SetActive(true);
+    GameObject.Find("SoundManager").GetComponent<SoundManager>().playSound("bgm");
   }
 
   void Start()

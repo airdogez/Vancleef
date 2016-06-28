@@ -1,22 +1,14 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+[Serializable] public class DictionaryAudioSource : SerializableDictionary<string, AudioSource>{}
 
 public class SoundManager : MonoBehaviour {
 
-  public Dictionary<string, AudioSource> mAudioDictionary;
-  // Use this for initialization
-  void Start () {
-    mAudioDictionary = new Dictionary<string, AudioSource>();
-    mAudioDictionary.Add("shoot", new AudioSource());
-    mAudioDictionary.Add("explosion", new AudioSource());
-    mAudioDictionary.Add("diamond", new AudioSource());
-    mAudioDictionary.Add("bgm", new AudioSource());
+  public DictionaryAudioSource mAudioSources;
 
-  }
-
-  // Update is called once per frame
-  void Update () {
-
+  public void playSound(string key){
+    mAudioSources[key].GetComponent<AudioSource>().Play();
   }
 }

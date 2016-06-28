@@ -35,6 +35,8 @@ public class Bomb : MonoBehaviour {
   void Explode()
   {
     GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    GameObject.Find("Bomb").GetComponent<AudioSource>().Play();
+    GameObject.Find("SoundManager").GetComponent<SoundManager>().playSound("bomb");
   }
 
   void endExplosion()
