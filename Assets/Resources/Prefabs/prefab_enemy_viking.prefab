@@ -95,10 +95,10 @@ MonoBehaviour:
   currentLevel: {fileID: 0}
   _bullet: {fileID: 189326, guid: 82de7f2ea14404f038e3df0e9b5afc8d, type: 2}
   levels:
-  - {fileID: 11400000, guid: 91df23b9806598245a8481aaf4c12128, type: 2}
-  - {fileID: 11400000, guid: 22e8066de7d13264b9df1060d924a2ea, type: 2}
-  - {fileID: 11400000, guid: e5c9b5119e844ed4d8cc5b4632dcac88, type: 2}
-  - {fileID: 11400000, guid: 5600a3285780c3247b986fa25d4ff35d, type: 2}
+  - {fileID: 11400000, guid: f299edd2ec9ea844a95b3f30980a13d1, type: 2}
+  - {fileID: 11400000, guid: a2899f2d3f084c746a62b99d43c0a2b5, type: 2}
+  - {fileID: 11400000, guid: 057e2432c61d04c48a350127df91b202, type: 2}
+  - {fileID: 11400000, guid: eaa33256e6767e14c89e914e2398cfa5, type: 2}
 --- !u!212 &21213256
 SpriteRenderer:
   m_ObjectHideFlags: 1

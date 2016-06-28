@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae8cfbc0cf98414e84ef6d508bff44f, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  vida: 0
-  velocidad: 0
-  sprite: {fileID: 0}
-  puntaje: 0
-  shootingFreq: 0
-  bulletSpeed: 0
+  vida: 1
+  velocidad: 1
+  sprite: {fileID: 21300000, guid: 9249e8992c46a46829595caa9a02ff5d, type: 3}
+  puntaje: 150
+  shootingFreq: 2
+  bulletSpeed: 10
   bulletSpawnPoints: []
