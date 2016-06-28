@@ -108,10 +108,16 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Coin"))
         {
-            GameObject diamond = (GameObject)collision.gameObject;
+            GameObject diamond = collision.gameObject;
             GameController.Instance.AddPuntaje(diamond.GetComponent<Coin>().score);
             GameObject.Find("CoinSound").GetComponent<AudioSource>().Play();
             Destroy(collision.gameObject);
+        }
+
+        if (collision.CompareTag("Asteroid"))
+        {
+            GameObject diamond = collision.gameObject;
+            KillPlayer();
         }
     }
 
