@@ -22,7 +22,7 @@ public class Coin : MonoBehaviour {
   // Update is called once per frame
   void Update () {
     Vector2 bottom = Camera.main.ViewportToWorldPoint(new Vector2(0,0));
-    GetComponent<Rigidbody2D>().velocity = Vector2.down * speed * Time.deltaTime;
+    GetComponent<Rigidbody2D>().velocity = Vector2.down * speed * Time.deltaTime * Modifiers.Instance.globalSpeedModifier;
     GetComponent<SpriteRenderer>().sprite = sprite;
     if (transform.position.y <  bottom.y)
     {

@@ -15,7 +15,7 @@ public class Spaceship : MonoBehaviour
     public void Shoot(Vector3 origin)
     {
         GameObject bullet = (GameObject)Instantiate(_bullet, new Vector3(transform.position.x + origin.x, transform.position.y + origin.y), Quaternion.Euler(0f, 0f, origin.z));
-        bullet.GetComponent<EnemyBullet>().SetSpeed(currentLevel.bulletSpeed);
+        bullet.GetComponent<EnemyBullet>().SetSpeed(-currentLevel.bulletSpeed);
         GameObject goLayerBullets = GameObject.Find("Layer_Bullets");
         bullet.transform.parent = goLayerBullets.transform;
         GameObject.Find("SoundManager").GetComponent<SoundManager>().playSound("enemyshoot");
@@ -23,7 +23,7 @@ public class Spaceship : MonoBehaviour
 
     public void Move(Vector2 direction)
     {
-        GetComponent<Rigidbody2D>().velocity = direction * currentLevel.velocidad;
+        GetComponent<Rigidbody2D>().velocity = direction * (currentLevel.velocidad / 0.016f) * Time.deltaTime * Modifiers.Instance.globalSpeedModifier;
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Player
   - EnemyBullet
   - PlayerBullet
   - Coin
@@ -24,7 +23,7 @@ TagManager:
   - Player
   - PlayerBullets
   - Enemies
-  - 
+  - Coin
   - 
   - 
   - 
@@ -55,6 +54,12 @@ TagManager:
   - name: Bullet
     uniqueID: 3572752621
     locked: 0
+  - name: Enemies
+    uniqueID: 2407241797
+    locked: 0
   - name: Player
     uniqueID: 2951591955
+    locked: 0
+  - name: UI
+    uniqueID: 903754841
     locked: 0

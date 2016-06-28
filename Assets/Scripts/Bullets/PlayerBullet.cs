@@ -10,7 +10,7 @@ public class PlayerBullet : MonoBehaviour {
 
   // Update is called once per frame
   void Update () {
-    GetComponent<Rigidbody2D>().velocity = transform.up.normalized * speed;
+    GetComponent<Rigidbody2D>().velocity = transform.up.normalized * (speed / 0.016f) * Time.deltaTime * Modifiers.Instance.globalSpeedModifier;
     Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1,1));
     if (transform.position.y > max.y)
       Destroy (gameObject);

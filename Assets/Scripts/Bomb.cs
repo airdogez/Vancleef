@@ -20,7 +20,7 @@ public class Bomb : MonoBehaviour {
   void Start ()
   {
     //Move Up
-    GetComponent<Rigidbody2D>().velocity = transform.up.normalized * speed;
+    GetComponent<Rigidbody2D>().velocity = transform.up.normalized * speed * Time.deltaTime * Modifiers.Instance.globalSpeedModifier;
   }
 
   // Update is called once per frame

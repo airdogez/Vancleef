@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae8cfbc0cf98414e84ef6d508bff44f, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: 
+  vida: 5
+  velocidad: 4
+  anim: {fileID: 9100000, guid: f33483dbd365ac443a846d70f695f434, type: 2}
+  puntaje: 250
+  shootingFreq: 0
+  bulletSpeed: 0
+  bulletSpawnPoints: []

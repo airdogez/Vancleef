@@ -20,7 +20,7 @@ public class Asteroid : MonoBehaviour {
         hits = 4;
         float r = Random.Range(-1.0f, 1.0f);
         direction = new Vector2(r, -1);
-        speed = 3;
+        speed = 187.5f;
 
         FieldMin = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
         FieldMax = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
@@ -71,7 +71,7 @@ public class Asteroid : MonoBehaviour {
                 hits--;
             }
 
-            GetComponent<Rigidbody2D>().velocity = direction * speed;
+            GetComponent<Rigidbody2D>().velocity = direction * speed * Time.deltaTime * Modifiers.Instance.globalSpeedModifier;
         }
     }
 }

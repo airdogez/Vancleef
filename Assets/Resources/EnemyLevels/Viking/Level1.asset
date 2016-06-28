@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   vida: 1
-  velocidad: 2
-  sprite: {fileID: 21300008, guid: 406a3564c2a00f044a64f525895fc32c, type: 3}
-  puntaje: 100
-  shootingFreq: 2
-  bulletSpeed: -5
+  velocidad: 1
+  anim: {fileID: 9100000, guid: 74fd9171bbc79e74abb62f1d7386d943, type: 2}
+  puntaje: 50
+  shootingFreq: 1.5
+  bulletSpeed: 3
   bulletSpawnPoints:
   - {x: 0, y: 0, z: 0}

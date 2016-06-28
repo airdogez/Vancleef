@@ -5,29 +5,36 @@ public class RavenEnemy : Spaceship {
     
     public override void Start()
     {
-        LevelUp(0);
         StartCoroutine(Shoot());
     }
 
     public override void Update()
     {
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
-        Move(Vector2.down * currentLevel.velocidad);
+        Move(Vector2.down);
         if (transform.position.y < min.y)
             Destroy(gameObject);
     }
 
     public override void LevelUp(int level)
     {
-        currentLevel = levels[level];
-        GetComponent<SpriteRenderer>().sprite = currentLevel.sprite;
+        if (level < 3)
+        {
+            currentLevel = levels[level];
+            GetComponent<Animator>().runtimeAnimatorController = currentLevel.anim;
+        }
+        else
+        {
+            currentLevel = levels[2];
+            GetComponent<Animator>().runtimeAnimatorController = currentLevel.anim;
+        }
     }
 
     IEnumerator Shoot()
     {
         while (true)
         {
-            yield return new WaitForSeconds(currentLevel.shootingFreq);
+            yield return new WaitForSeconds(currentLevel.shootingFreq / Modifiers.Instance.globalSpeedModifier);
             foreach(Vector3 vec in currentLevel.bulletSpawnPoints)
             {
                 Shoot(vec);

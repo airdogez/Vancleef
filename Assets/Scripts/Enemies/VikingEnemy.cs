@@ -23,14 +23,14 @@ public class VikingEnemy : Spaceship {
     public override void LevelUp(int level)
     {
         currentLevel = levels[level];
-        GetComponent<SpriteRenderer>().sprite = currentLevel.sprite;
+        GetComponent<Animator>().runtimeAnimatorController = currentLevel.anim;
     }
 
     IEnumerator Shoot()
     {
         while (true)
         {
-            yield return new WaitForSeconds(currentLevel.shootingFreq);
+            yield return new WaitForSeconds(currentLevel.shootingFreq / Modifiers.Instance.globalSpeedModifier);
             foreach(Vector3 vec in currentLevel.bulletSpawnPoints)
             {
                 Shoot(vec);

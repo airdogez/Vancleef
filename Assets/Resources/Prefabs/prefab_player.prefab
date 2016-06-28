@@ -59,7 +59,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.081, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 489852}
   m_RootOrder: 0
@@ -72,7 +71,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.081, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 489852}
   m_RootOrder: 1
@@ -85,7 +83,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.02, y: -3.95, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 445398}
   - {fileID: 460022}
@@ -131,7 +128,7 @@ Animator:
   m_GameObject: {fileID: 195554}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3bfce33c031384fbc89aeef606ec278d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0400598b8bf5a6b43853441ff0e9de68, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -155,7 +152,6 @@ MonoBehaviour:
   _shootDelay: 0.75
   graze: 0
   maxGraze: 100
-  movement: {fileID: 0}
   bombMax: 1
   bombCant: 1
   isDead: 0

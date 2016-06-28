@@ -5,7 +5,7 @@ public class BaseEnemyLevel : ScriptableObject
 {
     public float vida;
     public float velocidad;
-    public Sprite sprite;
+    public RuntimeAnimatorController anim;
     public int puntaje;
     public float shootingFreq;
     public float bulletSpeed;

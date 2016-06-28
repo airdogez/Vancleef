@@ -13,7 +13,7 @@ public class EnemyBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody2D>().velocity = transform.up.normalized * speed;
+        GetComponent<Rigidbody2D>().velocity = transform.up.normalized * speed * Time.deltaTime * Modifiers.Instance.globalSpeedModifier;
 
         //If its out of the screen Delete it
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
@@ -23,6 +23,6 @@ public class EnemyBullet : MonoBehaviour
 
     public void SetSpeed(float s)
     {
-        speed = s;
+        speed = s / 0.016f;
     }
 }
