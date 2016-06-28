@@ -116,8 +116,24 @@ public class Player : MonoBehaviour
 
     if (collision.CompareTag("Asteroid"))
     {
+<<<<<<< HEAD
       GameObject diamond = collision.gameObject;
       KillPlayer();
+=======
+        if (collision.CompareTag("Coin"))
+        {
+            GameObject diamond = collision.gameObject;
+            GameController.Instance.AddPuntaje(diamond.GetComponent<Coin>().score);
+            GameObject.Find("CoinSound").GetComponent<AudioSource>().Play();
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.CompareTag("Asteroid"))
+        {
+            GameObject diamond = collision.gameObject;
+            KillPlayer();
+        }
+>>>>>>> refs/remotes/origin/master
     }
   }
 

@@ -1884,6 +1884,7 @@ Transform:
   m_Father: {fileID: 482574394}
   m_RootOrder: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &1237172300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1920,6 +1921,8 @@ MonoBehaviour:
     - {fileID: 524028711}
     - {fileID: 0}
 =======
+=======
+>>>>>>> refs/remotes/origin/master
 --- !u!1001 &1289561285
 Prefab:
   m_ObjectHideFlags: 0
@@ -1966,7 +1969,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9ecce4eda38da54baa746b8988058bb, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
 >>>>>>> 6818ab64fd40876314d33d4eb66d2b43b6419932
+=======
+>>>>>>> refs/remotes/origin/master
 --- !u!1 &1365898978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,6 +2981,7 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1869392551}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1873913358
 GameObject:
   m_ObjectHideFlags: 0
@@ -3127,6 +3134,8 @@ Prefab:
   m_IsPrefabParent: 0
 =======
 >>>>>>> 6818ab64fd40876314d33d4eb66d2b43b6419932
+=======
+>>>>>>> refs/remotes/origin/master
 --- !u!1 &2056490757
 GameObject:
   m_ObjectHideFlags: 0
