@@ -18,6 +18,7 @@ public class Spaceship : MonoBehaviour
         bullet.GetComponent<EnemyBullet>().SetSpeed(currentLevel.bulletSpeed);
         GameObject goLayerBullets = GameObject.Find("Layer_Bullets");
         bullet.transform.parent = goLayerBullets.transform;
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().playSound("enemyshoot");
     }
 
     public void Move(Vector2 direction)
