@@ -25,7 +25,7 @@ public class CoinFactory : MonoBehaviour
     void Update()
     {
         float segmentTime = Time.time - startTimeSegments;
-        if (segmentTime >= 15)
+        if (segmentTime >= 60)
         {
             level++; //limitar o arreglar
             startTimeSegments = Time.time;

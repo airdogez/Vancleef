@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
     private Vector3 rightTop;
     private BulletFactory mBulletFactory;
     private GameObject mGoEnemyLayer;
-    private GameObject mCoinFactory;
+    //private GameObject mCoinFactory;
     private Player mGoPlayer;
     private int enemiesLevel = 0;
     private int puntaje = 0;
@@ -92,6 +92,31 @@ public class GameController : MonoBehaviour
         selectionScreen.SetActive(false);
         uiUpdate.gameObject.SetActive(true);
         GameObject.Find("SoundManager").GetComponent<SoundManager>().playSound("bgm");
+
+#if UNITY_ANDROID
+        touchControlCanvas.gameObject.SetActive(true);
+        
+        mGoPlayer.SetJoystickCenter(Camera.main.ScreenToWorldPoint(touchControlCanvas.transform.GetChild(0).position));
+        EventTrigger trigger = touchControlCanvas.transform.GetChild(0).GetComponent<EventTrigger>();
+        EventTrigger.Entry entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerEnter;
+        entry.callback = new EventTrigger.TriggerEvent();
+        UnityAction<BaseEventData> call = new UnityAction<BaseEventData>(mGoPlayer.OnPointerEnter);
+        entry.callback.AddListener(call);
+        trigger.triggers.Add(entry);
+
+        entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerExit;
+        entry.callback = new EventTrigger.TriggerEvent();
+        call = new UnityAction<BaseEventData>(mGoPlayer.OnPointerExit);
+        entry.callback.AddListener(call);
+        trigger.triggers.Add(entry);
+
+        touchControlCanvas.transform.GetChild(1).GetComponent<RepeatButton>().SetRepeatActionAction(mGoPlayer.Shoot);
+        touchControlCanvas.transform.GetChild(1).GetComponent<RepeatButton>().SetReleaseAction(mGoPlayer.ResetShootStatus);
+        touchControlCanvas.transform.GetChild(1).GetComponent<RepeatButton>().SetPressAction(mGoPlayer.ApplyMod);
+        touchControlCanvas.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(() => { mGoPlayer.ShootBomb(); });
+#endif
     }
 
     void Start()
@@ -120,7 +145,7 @@ public class GameController : MonoBehaviour
             if (enemiesLevel < 3)
             {
                 float segmentTime = Time.time - startTimeSegments;
-                if (segmentTime >= 15)
+                if (segmentTime >= 60)
                 {
                     enemiesLevel++;
                     startTimeSegments = Time.time;

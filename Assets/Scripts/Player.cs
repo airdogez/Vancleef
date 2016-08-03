@@ -93,10 +93,20 @@ public class Player : MonoBehaviour
         gameObject.transform.localPosition = pos;
 
         //SLOWMO
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            Modifiers.Instance.playerSpeedModifier = 0.5f;
-            Modifiers.Instance.globalSpeedModifier = 0.25f;
+            if (Modifiers.Instance.playerSpeedModifier == 1.0f)
+            {
+                Modifiers.Instance.playerSpeedModifier = 0.5f;
+                Modifiers.Instance.globalSpeedModifier = 0.25f;
+            }
+            else
+            {
+                Modifiers.Instance.playerSpeedModifier = 1.0f;
+                Modifiers.Instance.globalSpeedModifier = 1.0f;
+            }
+
+            
         }
             
     }
