@@ -1,11 +1,5 @@
 Vancleef
 ========
 
-Juego Shoot em up realizado para el curso de Taller de Desempeno Profesional 2016-1 UPC.
+Simple Vertical space shooter in 2D
 
-Integrantes
-===========
-
-* Andres Revolledo
-* Alvaro Barua
-* Rodrigo Linarez
